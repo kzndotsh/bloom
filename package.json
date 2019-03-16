@@ -1,0 +1,19 @@
+{
+  "name": "webtesting-i-guided",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "change this to use jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LambdaSchool/webtesting-i-guided.git"
+  },
+  "keywords": [],
+  "author": "Lambda School",
+  "bugs": {
+    "url": "https://github.com/LambdaSchool/webtesting-i-guided/issues"
+  },
+  "homepage": "https://github.com/LambdaSchool/webtesting-i-guided#readme"
+}
