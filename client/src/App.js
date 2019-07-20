@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
