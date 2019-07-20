@@ -4,26 +4,21 @@ import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
-export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      savedList: []
-    };
-  }
-
+const App = () => {
+  const [savedList, setSaveList] = useState([]);
+  
   addToSavedList = movie => {
-    const savedList = this.state.savedList;
-    savedList.push(movie);
-    this.setState({ savedList });
+    setSavedList([...savedList, movie]);
   };
 
   render() {
     return (
       <div>
-        <SavedList list={this.state.savedList} />
+        <SavedList list={savedList} />
         <div>Replace this Div with your Routes</div>
       </div>
     );
   }
 }
+
+export default App;
