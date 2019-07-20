@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Movie = (props) => {
@@ -48,3 +48,5 @@ const Movie = (props) => {
     </div>
   );
 }
+
+export default Movie;
