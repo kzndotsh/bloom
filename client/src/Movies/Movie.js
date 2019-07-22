@@ -9,8 +9,7 @@ const Movie = (props) => {
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
-    fetchMovie = id => {
-      axios
+       axios
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
@@ -18,11 +17,11 @@ const Movie = (props) => {
         .catch(error => {
           console.error(error);
         });
-    };
-  });
+
+  },[]);
   
   // Uncomment this only when you have moved on to the stretch goals
-  // saveMovie = () => {
+  // const saveMovie = () => {
   //   const addToSavedList = props.addToSavedList;
   //   addToSavedList(movie)
   // }
