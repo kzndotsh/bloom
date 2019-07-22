@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Movie = (props) => {
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState({});
  
   useEffect(() => {
     const id = 1;
