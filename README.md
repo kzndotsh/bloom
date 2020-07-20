@@ -33,15 +33,14 @@ Topics:
 
 #### Add Functionality
 
-* [ ] Make it so that the card in `MovieList` is a link, this should direct the user to the `/movies/{id of movie here}` URL, where `:id` is the id of the individual movie.
-* [ ] When a user clicks on a movie card they should be taken to `/movies/{id of movie here}` to see the details for the selected movie.
-* [ ] You will need to modify line 13 of `Movie.js` in order to accept the correct id for the movie selected.
+* [ ] When a user clicks on the movie card inside `MovieList` they should be taken to `/movies/{id of clicked movie here}` to see the details of the selected movie.
+* [ ] You will need to modify line 8 of `Movie.js` to get the id of the selected movie from the URL.
 * [ ] Add functionality so the `Home` button on the `SavedList` component navigates back to home.
-* [ ] You should now be able to navigate back and forth between the individual movies and the home screen.
+* [ ] You should now be able to navigate back and forth between the list of movies and the detailed view of a single movie.
 
 ### Task 2b: Exit Ticket
 
-Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/2Ns5Lre6aMBcCtPEq/wdQFNfsdiY5b3T). 
+Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/2Ns5Lre6aMBcCtPEq/wdQFNfsdiY5b3T).
 
 The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
 
@@ -51,7 +50,9 @@ If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
 
 #### Refactor so that our code is DRY
 
-* [ ] You may notice that we are using essentially the same exact JSX code in the `Movie` component and the `MovieDetails` component in `MovieList.js` create a new component in `MovieCard.js` that returns this JSX code. Then remove the old code from `Movie` and `MovieDetails` and instead return the new `MovieCard` component.
+* [ ] You may notice that we are using very similar JSX in the `Movie` component and in the `MovieDetails` component in `MovieList.js`. The main difference is the list of stars, which only exists in the "detailed" view of the `Movie` component.
+* [ ] Create a new component in `MovieCard.js` that returns a Movie Card. Then remove the old code from `Movie` and `MovieDetails` and instead return the new `MovieCard` component.
+* [ ] The Movie Card should be flexible enough to handle displaying a movie with or without the list of stars.
 
 #### Add `Save Movie` functionality
 

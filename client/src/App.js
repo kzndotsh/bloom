@@ -4,7 +4,7 @@ import axios from 'axios';
 import SavedList from './Movies/SavedList';
 
 const App = () => {
-  const [savedList, setSavedList] = useState([]);
+  const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
@@ -21,13 +21,13 @@ const App = () => {
     getMovies();
   }, []);
 
-  const addToSavedList = movie => {
-    setSavedList([...savedList, movie]);
+  const addToSavedList = id => {
+    // This is stretch. Prevent the same movie from being "saved" more than once
   };
 
   return (
     <div>
-      <SavedList list={savedList} />
+      <SavedList list={[ /* This is stretch */]} />
       <div>Replace this Div with your Routes</div>
     </div>
   );
