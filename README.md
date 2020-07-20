@@ -20,11 +20,11 @@ Topics:
 
 * [ ] Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000` (although the port number will be different if 3000 is being used).
 
-  ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
-  
+  ![Movies Home](https://tk-assets.lambdaschool.com/c6b3e8d8-afe0-4663-82da-60b1de76f649_movies-home.png)
+
 ### Task 2a: MVP
 
-####  Set up Routes
+#### Set up Routes
 
 * [ ] Wrap your app with the router.
 * [ ] Inside your App file add two routes.
@@ -38,7 +38,6 @@ Topics:
 * [ ] You will need to modify line 13 of `Movie.js` in order to accept the correct id for the movie selected.
 * [ ] Add functionality so the `Home` button on the `SavedList` component navigates back to home.
 * [ ] You should now be able to navigate back and forth between the individual movies and the home screen.
-
 
 ### Task 2b: Exit Ticket
 
