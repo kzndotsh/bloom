@@ -6,6 +6,7 @@ const Movie = (props) => {
 
   let id = 1;
   // Change ^^^ that line and use a hook to grab the id from the URL
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
@@ -20,8 +21,7 @@ const Movie = (props) => {
   }, []);
 
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = evt => {
-  // }
+  // const saveMovie = evt => { }
 
   if (!movie) {
     return <div>Loading movie information...</div>;
