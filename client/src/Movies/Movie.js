@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function Movie (props) {
+export default function Movie(props) {
   const [movie, setMovie] = useState();
 
   let id = 1;
@@ -9,9 +9,10 @@ export default function Movie (props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/movies/${id}`)
+      .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
       .then(response => {
-        setMovie(response.data);
+        // Study this response with a breakpoint or log statements
+        // and set the response data as the 'movie' slice of state
       })
       .catch(error => {
         console.error(error);
