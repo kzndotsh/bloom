@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Movie = (props) => {
+export default function Movie (props) {
   const [movie, setMovie] = useState();
 
   let id = 1;
@@ -28,6 +28,7 @@ const Movie = (props) => {
   }
 
   const { title, director, metascore, stars } = movie;
+
   return (
     <div className="save-wrapper">
       <div className="movie-card">
@@ -50,5 +51,3 @@ const Movie = (props) => {
     </div>
   );
 }
-
-export default Movie;

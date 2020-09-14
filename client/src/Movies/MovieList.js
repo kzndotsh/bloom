@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MovieList = props => {
+export default function MovieList(props) {
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
@@ -10,8 +10,9 @@ const MovieList = props => {
   );
 }
 
-function MovieDetails({ movie }) {
-  const { title, director, metascore } = movie;
+function MovieDetails(props) {
+  const { title, director, metascore } = props.movie;
+
   return (
     <div className="movie-card">
       <h2>{title}</h2>
@@ -24,5 +25,3 @@ function MovieDetails({ movie }) {
     </div>
   );
 }
-
-export default MovieList;
