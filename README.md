@@ -20,7 +20,7 @@ Topics:
 
 * [ ] Once your application is up and running on the client, you should see a browser window that looks like [this](https://tk-assets.lambdaschool.com/c6b3e8d8-afe0-4663-82da-60b1de76f649_movies-home.png) at `localhost:3000` (although the port number will be different if 3000 is being used).
 
-### Task 2a: MVP
+### Task 2: MVP
 
 #### Design Files
 
@@ -42,12 +42,6 @@ Once you are done your application will have two routes:
 * [ ] You will need to modify line 7 of `Movie.js` to get the id of the selected movie from the URL.
 * [ ] Add functionality so the `Home` button on the `SavedList` component navigates back to home.
 * [ ] You should now be able to navigate back and forth between the list of movies and the detailed view of a single movie.
-
-### Task 2b: Exit Ticket
-
-Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/2Ns5Lre6aMBcCtPEq/wdQFNfsdiY5b3T).
-
-The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
 
 ### Task 3: Stretch Goals
 
@@ -74,4 +68,3 @@ If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
 ## Submission Format
 
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
-* [ ] Fill out your module retrospective form [here](https://forms.lambdaschool.com/module-retrospective) with a link to your PR
