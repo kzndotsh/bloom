@@ -6,7 +6,6 @@ In this module we will cover the basics of automated testing and use `jest` to w
 
 ## Project Setup
 
-- [ ] fork and clone this repository.
-- [ ] **CD into the folder** where you cloned **your fork**.
+- [ ] clone this repository.
 
 Please follow along as the instructor uses _Test Driven Development (TDD)_ to implement the `add()` feature of a simple `calculator`.
