@@ -5,12 +5,12 @@
     "scripts": {
         "server": "nodemon index.js"
     },
-    "repository": "https://github.com/LambdaSchool/webdb-i-guided",
+    "repository": "https://github.com/LambdaSchool/node-db1-guided.git",
     "license": "MIT",
     "dependencies": {
         "express": "^4.17.1"
     },
     "devDependencies": {
-        "nodemon": "^2.0.4"
+        "nodemon": "^2.0.6"
     }
 }
