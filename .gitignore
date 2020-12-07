@@ -1,5 +1,5 @@
-# Allow the use of Yarn
-package-lock.json
+# VSCode
+.vscode
 
 # Mac Files
 .DS_Store
