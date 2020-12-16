@@ -4,7 +4,8 @@
   "description": "Web Testing I Guided Project",
   "main": "index.js",
   "scripts": {
-    "test": "change this to use jest"
+    "test": "change this to use jest",
+    "ketchup": "git fetch && git reset --hard origin/lecture"
   },
   "repository": {
     "type": "git",
