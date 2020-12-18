@@ -1,12 +1,11 @@
 {
-  "name": "webtesting-i-guided",
+  "name": "node-testing1-guided",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "ketchup": "git fetch && git reset --hard origin/lecture"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/webtesting-i-guided.git"
+    "url": "git+https://github.com/LambdaSchool/node-testing1-guided.git"
   }
 }
