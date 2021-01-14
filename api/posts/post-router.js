@@ -1,8 +1,7 @@
 const express = require('express')
+const Post = require('./post-model')
 
 const router = express.Router()
-
-const Post = require('./post-model')
 
 router.get('/', async (req, res, next) => {
   try {
@@ -13,36 +12,36 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/:id', async (req, res, next) => {
+router.get('/:id', checkId, async (req, res, next) => {
   try {
-    const data = await Post.getById(req.params.id)
+    const data = await Post.getById()
     res.json(data)
   } catch (err) {
     next(err)
   }
 })
 
-router.post('/', async (req, res, next) => {
+router.post('/', checkPayload, async (req, res, next) => {
   try {
-    const data = await Post.create(req.body)
+    const data = await Post.create()
     res.json(data)
   } catch (err) {
     next(err)
   }
 })
 
-router.put('/:id', async (req, res,next ) => {
+router.put('/:id', checkId, async (req, res,next ) => {
   try {
-    const data = await Post.update(req.params.id, req.body)
+    const data = await Post.update()
     res.json(data)
   } catch (err) {
     next(err)
   }
 })
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id', checkId, checkPayload, async (req, res, next) => {
   try {
-    const data = await Post.remove(req.params.id)
+    const data = await Post.remove()
     res.json(data)
   } catch (err) {
     next(err)
@@ -52,5 +51,13 @@ router.delete('/:id', async (req, res, next) => {
 router.use((err, req, res, next) => {
   res.status(500).json({ message: err.message, stack: err.stack })
 })
+
+function checkId(req, res, next) {
+  next()
+}
+
+function checkPayload(req, res, next) {
+  next()
+}
 
 module.exports = router

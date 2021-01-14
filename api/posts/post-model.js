@@ -1,4 +1,3 @@
-// db access functions here
 module.exports = {
   get,
   getById,
@@ -11,18 +10,18 @@ function get() {
   return Promise.resolve('get wired')
 }
 
-function getById(id) {
+function getById() {
   return Promise.resolve('getById wired')
 }
 
-function create(post) {
+function create() {
   return Promise.resolve('create wired')
 }
 
-function update(id, post) {
+function update() {
   return Promise.resolve('update wired')
 }
 
-function remove(id) {
+function remove() {
   return Promise.resolve('delete wired')
 }
