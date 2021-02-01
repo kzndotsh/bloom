@@ -16,8 +16,7 @@ _You have **three hours** to complete this challenge. Plan your time accordingly
 ## Introduction
 In this project you will create a login page and request a token from the server that you'll use to send all other requests to the server. You will then be able to fetch the color data array, update data, and delete data, and watch the fun happen!
 
-### Commits
-Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons) and your team lead as the evaluate your solution.
+**Commit your code regularly and meaningfully.** This helps both you (in case you ever need to return to old code for any number of reasons) and your team lead as the evaluate your solution.
 
 ## Instructions
 
