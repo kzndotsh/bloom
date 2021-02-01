@@ -38,11 +38,11 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
  - [ ] **RUN** npm install install your dependences
  - [ ] **RUN** npm start to fire up your React application.
 
- **Setting up the CodeGrade webhook**
-Go [here](./CodeGrade-webhook.md) to setup the CodeGrade webhook before you begin.
+### Task 2: Setting up the CodeGrade webhook**
+- [ ] Go [here](./CodeGrade-webhook.md) to setup the CodeGrade webhook before you begin.
 
 
-### Task 2: Project Requirements
+### Task 3: Project Requirements
 Your finished project must include all of the following requirements.
 
 #### Stage 1 - Authentication
