@@ -1,5 +1,4 @@
 # [Sprint Challenge Name]
-## Unit X | Sprint X
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 

@@ -1,5 +1,4 @@
 # Advanced Web Applications Sprint Challenge
-## Unit 2 | Sprint 3
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
