@@ -90,7 +90,8 @@ In this project you will create a login page and request a token from the server
  Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. 
  Add your answers to the questions within `interview_answers.md` file.
 
- 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
- 2. What does `bcryptjs` do to help us store passwords in a secure manner?
- 3. How are unit tests different from integration and end-to-end testing?
- 4. How does _Test Driven Development_ change the way we write applications and tests?
+1. Explain what a token is used for.
+2. What steps can you take in your web apps to keep your data secure?
+3. Describe how web servers work.
+4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+
