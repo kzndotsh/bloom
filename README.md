@@ -59,9 +59,11 @@ In this project you will create a login page and request a token from the server
   - It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
  ### Task 4: Stretch Goals 
- **IMPORTANT:** Only work on stretch goals after completing your MVP! When completing these goals, make sure to use a **new branch** to ensure your MVP code is not overwritten. You can branch off `main` by executing `git checkout -b stretch`. When you are fully sure your stretch code is ready for feedback, merge your stretch code with main using `git checkout main` and `git merge stretch.`
+ **IMPORTANT:** Only work on stretch goals after completing your MVP! 
 
- After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
+ When completing these goals, make sure to use a **new branch** to ensure your MVP code is not overwritten. You can branch off `main` by executing `git checkout -b stretch`. When you are fully sure your stretch code is ready for feedback, merge your stretch code with main using `git checkout main` and `git merge stretch.`
+
+  After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
  * [ ] Build out another form to add a new color to your color list
  * [ ] Build a custom hook called `useApi` that you can use to make all of your API calls
