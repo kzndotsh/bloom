@@ -76,7 +76,7 @@ In this project you will create a login page and request a token from the server
 
 ### Reference Materials
 
-  [include any links or descriptions nessissary for project development]
+[include any links or descriptions nessissary for project development]
 
 #### [Reference type: API Documentation]
 
