@@ -96,6 +96,8 @@ In this project you will create a login page and request a token from the server
 * [ ] Check codegrade for automated feedback
 * [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
 
+[For more on checking feedback click here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file.
