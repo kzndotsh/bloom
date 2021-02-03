@@ -94,9 +94,7 @@ In this project you will create a login page and request a token from the server
 
 * [ ] Submit via Codegrade by commiting and pushing any new changes on main to github.
 * [ ] Check codegrade for automated feedback
-* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
-
-[For more on checking feedback click here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. [For more on checking codegrade feedback click here.](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
 
 ## Interview Questions
 
