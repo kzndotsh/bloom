@@ -21,13 +21,17 @@ In this project you will create a login page and request a token from the server
 ### Task 1: Project Setup
 
 * [ ] Fork and clone this repository.
+* [ ] Create a new branch with the 
+* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [ ] Push commits: git push origin `<firstName-lastName>`.
 * [ ] **RUN** `npm install` to install your dependencies.
 * [ ] **RUN** `npm start` to start your application.
 
 ### Task 2: CodeGrade Setup
 
 * [ ] Open the assignment in Canvas and click on the "Set up git" option.
-* [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
+* [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`.
 * [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
 * [ ] Check to see that Codegrade has accepted your git submssion.
 
@@ -55,7 +59,6 @@ Build a login form to authenticate your users.
 * [ ] Finish the test in `BubblePage.test.js` to test that your app is fetching the bubble data from the API
 
 **Notes:**
-
 * You are welcome to create additional files but **do not move or rename existing files** or folders.
 * Do not change your `package.json` file except to install additional libraries.
 * In your solution, it is essential that you follow best practices and produce clean and professional results.
@@ -66,9 +69,9 @@ Build a login form to authenticate your users.
 
 **IMPORTANT:** Only work on stretch goals after completing your MVP!
 
-When completing these goals, make sure to use a **new branch** to ensure your MVP code is not overwritten. You can branch off `main` by executing `git checkout -b stretch`. When you are fully sure your stretch code is ready for feedback, merge your stretch code with main using `git checkout main` and `git merge stretch.`
+When completing these goals, make sure to use a **new branch** to ensure your MVP code is not overwritten. You can branch off `<firstName-lastName>` by executing `git checkout -b stretch`. When you are fully sure your stretch code is ready for feedback, merge your stretch code with main using `git checkout <firstName-lastName>` and `git merge stretch.`
 
-After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
+These goals may or may not be things you have learned in this module but they build on the material you just studied:
 
 * [ ] Build out another form to add a new color to your color list
 * [ ] Build a custom hook called `useApi` that you can use to make all of your API calls
@@ -77,7 +80,6 @@ After finishing your required elements, you can push your work further. These go
 ### Reference Materials
 
 #### API Documentation
-
 * **[POST]** * to `http://localhost:5000/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'i<3Lambd4' }`
 * **[GET]** to `http://localhost:5000/api/colors`: returns the list of colors and their hex codes.
 * **[POST]** to `http://localhost:5000/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`).
@@ -92,13 +94,15 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission format
 
-* [ ] Submit via Codegrade by commiting and pushing any new changes on main to github.
-* [ ] Check codegrade for automated feedback
+* [ ] Submit via Codegrade by commiting and pushing any new changes.
+* [ ] Submit a pull-request to merge <firstName-lastName> branch into main. **Please don't merge your own pull request and make sure you are on your own repo**
+* [ ] Check codegrade for automated feedback.
 * [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
+* [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 
 ## Interview Questions
 
-Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file.
+Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
 1. Explain what a token is used for.
 2. What steps can you take in your web apps to keep your data secure?

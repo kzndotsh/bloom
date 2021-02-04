@@ -23,15 +23,19 @@ In this project you will create a login page and request a token from the server
 ### Task 1: Project Setup
 
 * [ ] Fork and clone this repository.
-* [ ] **RUN** npm install install your dependences
-* [ ] **RUN** npm start to fire up your React application.
+* [ ] Create a new branch with the 
+* [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [ ] Push commits: git push origin `<firstName-lastName>`.
+* [ ] **RUN** `npm install` to install your dependencies.
+* [ ] **RUN** `npm start` to start your application.
 
 ### Task 2: CodeGrade Setup
 
-* [ ] Open assignment in canvas and click on the "Set up git" option.
-* [ ] Follow instructions to setup codegrade Webhook and deploy key.
-* [ ] Push your first commit by using: `git commit --allow-empty -m "Create a CodeGrade submission" && git push`
-* [ ] Check to see that codegrade has accepted your git submssion.
+* [ ] Open the assignment in Canvas and click on the "Set up git" option.
+* [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`.
+* [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
+* [ ] Check to see that Codegrade has accepted your git submssion.
 
 ### Task 3: Project Requirements
 
@@ -92,15 +96,17 @@ In this project you will create a login page and request a token from the server
 
 ## Submission format
 
-* [ ] Submit via Codegrade by commiting and pushing any new changes on main to github.
-* [ ] Check codegrade for automated feedback
+* [ ] Submit via Codegrade by commiting and pushing any new changes.
+* [ ] Submit a pull-request to merge <firstName-lastName> branch into main. **Please don't merge your own pull request and make sure you are on your own repo**
+* [ ] Check codegrade for automated feedback.
 * [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
+* [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 
 ## Interview Questions
 
-Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file.
+Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
-1. [Interview question 1]
-2. [Interview question 2]
-3. [Interview question 3]
-4. [Interview question 4]
+1. [ Interview Question 1 ]
+2. [ Interview Question 2 ]
+3. [ Interview Question 3 ]
+4. [ Interview Question 4 ]
