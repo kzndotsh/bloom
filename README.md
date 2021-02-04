@@ -95,7 +95,7 @@ These goals may or may not be things you have learned in this module but they bu
 
 * [ ] Submit via Codegrade by commiting and pushing any new changes.
 * [ ] Submit a pull-request to merge <firstName-lastName> branch into main. **Please don't merge your own pull request and make sure you are on your own repo**
-* [ ] Check codegrade for automated feedback.
+* [ ] Check codegrade for automated feedback. You can see more within 
 * [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
 * [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 
