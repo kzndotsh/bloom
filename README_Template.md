@@ -1,4 +1,4 @@
-# [Sprint Challenge Name]
+# Sprint Challenge: [Sprint Challenge Name]
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
@@ -10,11 +10,11 @@ This is an individual assessment. All work must be your own. All projects will b
 
 You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support by dropping a :wave: in your help channel when needed.
 
-_You have **three hours** to complete this challenge. Plan your time accordingly._
+_Sprint challenges open at Midnight PST on Thursday and close at 5pm PST on Friday. You will receive feedback on what you have finished and submitted by 5pm when the submissions will be closed. No retakes will be accepted._
 
 ## Introduction
 
-[Paragraph descripting project functioning. As an example:
+[Paragraph descripting project functioning. Include any screenshots or gifs of the final output here. As an example:
 
 In this project you will create a login page and request a token from the server that you'll use to send all other requests to the server. You will then be able to fetch the color data array, update data, and delete data, and watch the fun happen!]
 
@@ -98,7 +98,7 @@ In this project you will create a login page and request a token from the server
 * [ ] Submit via Codegrade by commiting and pushing any new changes.
 * [ ] Submit a pull-request to merge <firstName-lastName> branch into main. **Please don't merge your own pull request and make sure you are on your own repo**
 * [ ] Check codegrade for automated feedback.
-* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
+* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
 * [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 
 ## Interview Questions
