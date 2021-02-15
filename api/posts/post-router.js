@@ -39,7 +39,7 @@ router.put('/:id', checkId, async (req, res,next ) => {
   }
 })
 
-router.delete('/:id', checkId, checkPayload, async (req, res, next) => {
+router.delete('/:id', checkId, async (req, res, next) => {
   try {
     const data = await Post.remove()
     res.json(data)
