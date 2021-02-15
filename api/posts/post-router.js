@@ -3,6 +3,14 @@ const Post = require('./post-model')
 
 const router = express.Router()
 
+function checkId(req, res, next) {
+  next()
+}
+
+function checkPayload(req, res, next) {
+  next()
+}
+
 router.get('/', async (req, res, next) => {
   try {
     const data = await Post.get()
@@ -30,7 +38,7 @@ router.post('/', checkPayload, async (req, res, next) => {
   }
 })
 
-router.put('/:id', checkId, async (req, res,next ) => {
+router.put('/:id', checkPayload, checkId, async (req, res,next ) => {
   try {
     const data = await Post.update()
     res.json(data)
@@ -51,13 +59,5 @@ router.delete('/:id', checkId, async (req, res, next) => {
 router.use((err, req, res, next) => {
   res.status(500).json({ message: err.message, stack: err.stack })
 })
-
-function checkId(req, res, next) {
-  next()
-}
-
-function checkPayload(req, res, next) {
-  next()
-}
 
 module.exports = router
