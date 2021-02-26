@@ -87,6 +87,7 @@ let nextId = 12;
 
 function authenticator(req) {
   const { authorization } = req.headers.map;
+  console.log(req);
   return (authorization === token);
 }
 
@@ -149,14 +150,14 @@ export const handlers = [
       if (!req.params.id) {
         return res(
           ctx.status(400),
-          ctx.send("Your request is missing the color id")
+          ctx.json("Your request is missing the color id")
         );
       }
 
       if (req.body.id === undefined || !req.body.color || !req.body.code) {
         return res(
           ctx.status(422),
-          ctx.send("Make sure your request body has all the fields it needs")
+          ctx.json("Make sure your request body has all the fields it needs")
         );
       }
 
@@ -181,7 +182,7 @@ export const handlers = [
       if (!req.params.id)
         return res(
           ctx.status(400),
-          ctx.send("Your request is missing the color id")
+          ctx.json("Your request is missing the color id")
         );
       colors = colors.filter((color) => `${color.id}` !== req.params.id);
       return res(ctx.status(202), ctx.json(req.params.id));
