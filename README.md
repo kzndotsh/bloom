@@ -36,7 +36,7 @@ In this project you will create a login page and request a token from the server
 
 ### Task 3: Project Requirements
 
-Your finished project must include all of the following requirements.
+Your finished project must include all of the following requirements. **Unlike other projects, the local server used here can not be accessed through the browser. It is started automatically and without the need for starting a server.js file. Feel free to ignore any messages related to MSW or mock service workers. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.**
 
 #### Authentication
 
