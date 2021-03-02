@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 
 const Login = () => {
   // make a post request to retrieve a token from the api
@@ -14,18 +13,14 @@ const Login = () => {
   //replace with error state
 
   return (
-    <>
-      <h1>
-        Welcome to the Bubble App!
-        <div data-testid="loginForm" className="login-form">
-        {  //build your login form here 
-        }
-        </div>
+    <div>
+      <h1>Welcome to the Bubble App!</h1>
+      <div data-testid="loginForm" className="login-form">
+        <h2>Build login form here</h2>
+      </div>
 
-        <p data-testid="errorMessage" className="error">{error}</p>
-        
-      </h1>
-    </>
+      <p data-testid="errorMessage" className="error">{error}</p>
+    </div>
   );
 };
 
