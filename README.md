@@ -22,15 +22,7 @@ By the end of this module, learners should be able to:
 ----
 
 ## Guided Project Slack Message
-> 1. Clone without forking the following repo: *base guided project repo*
-> 2. Navigate into both the review and followAlong folders and run npm i to load dependences.
->
-> :point_right: Technical issues spinning up the project? Please head over to the help channel!
-> :point_right: If you fall behind during lecture and wish to catch up:
->
-> git fetch && git reset --hard origin/lecture
->
-> :point_right: Slido event: *insert slido link*
+> No guided projects today.
 
 ----
 
@@ -39,7 +31,7 @@ By the end of this module, learners should be able to:
 > _______________________________________________________
 > Zoom Link : *insert zoom link*
 > Slido: *insert slido link*
-> Module Project: https://github.com/LambdaSchool/Deploying-Web-Apps
+> Module Project: https://github.com/LambdaSchool/web-module-project-deploying-web-apps
 
 ----
 
@@ -173,7 +165,7 @@ This project is a pretty light project. Let TLs know this, and let them know to 
 Also, many students have asked about just using Netlify for this modules. This point here is to use Zeit and try a different tool. If they don't want to add a project that's been deployed to Zeit on their portfolio, they can get approval form their TL to just deploy any project to Zeit and show that they have completed that.
 
 ### Module Project Review
-* [Deploying Web Apps](https://github.com/LambdaSchool/Deploying-Web-Apps)
+* [Deploying Web Apps](https://github.com/LambdaSchool/web-module-project-deploying-web-apps)
 
 ## Breakout Slack Messages
 
@@ -181,15 +173,14 @@ Also, many students have asked about just using Netlify for this modules. This p
 
 ## After Class Message
 Hope you all enjoyed today's guided Lesson!
-A reminder if that office hours are from 3:30 - 4:30 Lambda Time. Don't forget to complete the days Check for Understanding and Pulse Checks! 
+A reminder if that office hours are from 2:30 - 3:00 Lambda Time. Don't forget to complete the days Check for Understanding and Pulse Checks! 
 
 Module Project
-https://github.com/LambdaSchool/Deploying-Web-Apps
+https://github.com/LambdaSchool/web-module-project-deploying-web-apps
 
 Here is a review of today's material.
 
 Key Terminology
-* 📝 *sudo* - [An extremely useful terminal command that allows users to run commands with admin privilages](https://www.youtube.com/watch?v=8LQP4O2gMs0)
 * 📝 *TCP / IP* - [Transmission Control Protocol / Internet Protocol - the web standard that defines the routing of data between client and server](https://www.youtube.com/watch?v=PpsEaqJV_A0)
 * 📝 *HTTP* - [Hypertext Transfer Protocal - the web standard that defines the structure of server requests and responses](https://www.youtube.com/watch?v=iYM2zFP3Zn0)
 * 📝 *Client Side Rendering* - [An approach to web application development where most data interactions are handled through client code.](https://www.youtube.com/watch?v=38Fv4FTXuDg)
