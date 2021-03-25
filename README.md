@@ -22,7 +22,12 @@ By the end of this module, learners should be able to:
 ----
 
 ## Guided Project Slack Message
-> No guided projects today.
+> Hey all! You made it! Welcome to the last day of Unit 3! You made it!
+> Today’s guided project does not require external code, so need need to clone a repo today.
+> _______________________________________________________
+> What we do ask, if you have not already, is follow the instructions in your course material to setup an account on https://vercel.com.
+> 
+> :point_right: Slido event: https://app.sli.do/event/msea4w8q
 
 ----
 
