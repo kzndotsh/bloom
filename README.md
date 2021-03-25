@@ -186,6 +186,7 @@ https://github.com/LambdaSchool/web-module-project-deploying-web-apps
 Here is a review of today's material.
 
 Key Terminology
+* 📝 *Environmental Variables* - [An environment variable is a variable whose value is set outside the program, typically through functionality built into the operating system](https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa)
 * 📝 *TCP / IP* - [Transmission Control Protocol / Internet Protocol - the web standard that defines the routing of data between client and server](https://www.youtube.com/watch?v=PpsEaqJV_A0)
 * 📝 *HTTP* - [Hypertext Transfer Protocal - the web standard that defines the structure of server requests and responses](https://www.youtube.com/watch?v=iYM2zFP3Zn0)
 * 📝 *Client Side Rendering* - [An approach to web application development where most data interactions are handled through client code.](https://www.youtube.com/watch?v=38Fv4FTXuDg)
