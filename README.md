@@ -4,7 +4,7 @@ Guided project for **Node DB 4** Module.
 
 ## Prerequisites
 
-- [SQLite Studio](https://sqlitestudio.pl/){:target="_blank") installed.
+- [SQLite Studio](https://sqlitestudio.pl/){:target="_blank"} installed.
 - a rest client like [Insomnia](https://insomnia.rest/download/) or [Postman](https://www.getpostman.com/downloads/) installed.
 
 ## Project Setup
