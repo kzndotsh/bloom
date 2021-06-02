@@ -1,15 +1,11 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import BubblePage from "./BubblePage";
+import React from 'react';
+import { render, screen} from "@testing-library/react";
+import BubblePage from './BubblePage';
 
-test("Renders BubblePage without errors", () => {
-  // Finish this test
+test("Renders without errors", ()=> {
+    
 });
 
-test("Fetches data and renders the bubbles on mounting", () => {
-  // Finish this test
+test("Renders appropriate number of colors passed in through mock", async ()=> {
+    //Keep in mind that our service is called on mount for this component.
 });
-
-//Task List
-//1. Setup test for basic rendering of component
-//2. Setup test for initial rendering of bubbles on loading

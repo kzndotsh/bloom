@@ -87,7 +87,6 @@ let nextId = 12;
 
 function authenticator(req) {
   const { authorization } = req.headers.map;
-  console.log(req);
   return (authorization === token);
 }
 
@@ -97,7 +96,7 @@ export const handlers = [
   // Handles a POST /login request
   rest.post(`${urlBase}/login`, (req, res, ctx) => {
     const { username, password } = req.body;
-    if (username === "Lambda School" && password === "i<3Lambd4") {
+    if (username === "Lambda" && password === "School") {
       return res(
           ctx.status(200),
           ctx.json({
