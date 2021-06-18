@@ -109,6 +109,23 @@ export const handlers = [
         );
     }
   }),
+
+  rest.post(`${urlBase}/logout`, (req, res, ctx) => {
+    if (authenticator(req)) {
+      return res(
+        ctx.status(200),
+        ctx.json({
+            payload: token,
+        })
+      );
+    } else {
+      res(
+        ctx.status(403),
+        ctx.json({ error: "User must be logged in to do that." })
+      )
+    }
+  }),
+
   // Handles a GET /user request
   rest.get(`${urlBase}/colors`, (req, res, ctx) => {
     if (authenticator(req)) {
@@ -198,5 +215,5 @@ export const handlers = [
       ctx.status(200),
       ctx.json("The App is working!")
     );
-  }),
+  })
 ];
