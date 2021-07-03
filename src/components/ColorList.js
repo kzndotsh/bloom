@@ -9,7 +9,7 @@ const ColorList = (props) => {
 
   return (
     <div className="colors-wrap">
-      <p>colors</p>
+      <p id="color_title">colors</p>
       <ul>
         {colors.map(color => <Color key={color.id} setEditColor={setEditColor} color={color} toggleEdit={toggleEdit} deleteColor={deleteColor}/>)}
       </ul>

@@ -37,17 +37,20 @@ In this project you will create a login page and request a token from the server
 
 Your finished project must include all of the following requirements. **Unlike other projects, the local server used here can not be accessed through the browser. It is started automatically and without the need for starting a server.js file. Feel free to ignore any messages related to MSW or mock service workers. For this and the rest of your sprint challenges, test the functioning of the server directly through your http calls.**
 
+**See reference materials at the bottom of the this document for details on use the API.**
+
 #### Authentication
 > *Build a login form to authenticate your users along with all the components and utilities needed to support authentication.*
 
 * [ ] In `Login.js`, build all UI and state functionality needed to capture a username and password.
-* [ ] **Make sure that the input for your username and password includes the id="username" and id="password" attributes. These are needed for codegrade testing and codegrade autotests will fail without them.**
+* [ ] **Make sure that the input for your username and password includes the id="username" and id="password" attributes. Also make sure the submit button for this form contains the id="error" attribute. Codegrade autotests will fail without them.**
 * [ ] Build in functionality that would allow an error to be displayed in the provided p tag if either the username or password is incorrect.
+* [ ] **Make sure your error p tag has an id="error" attribute attached. Codegrade autotests will fail without them.**
 * [ ] Construct an http request that retrieves an auth token from the server when the username `Lambda` and the password `School` is passed into the request.
 * [ ] Save the token to localStorage.
 * [ ] Build a `axiosWithAuth` module within the helpers folder to create an instance of axios with the authentication header.
 * [ ] Build a `PrivateRoute` component within the components folder and use it to protect the route that renders the `BubblesPage` component.
-* [ ] In `App.js`, build the backend to the logout button. When pressed, send an http request to the logout endpoint and remove the authentication token from localStorage.
+* [ ] In `App.js`, build the backend to the logout button. When pressed, send an http request to the logout endpoint and remove the authentication token from localStorage. Use window.location.href to redirect to the login page.
 
 #### Consuming the API
 > *Add in the http requests and state changes needed to connect our api to the web application. Consider the effect of authentication on your api requests.*
@@ -83,6 +86,7 @@ These goals may or may not be things you have learned in this module but they bu
 
 #### API Documentation
 * **[POST]** * to `http://localhost:5000/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda', password: 'School' }`
+* **[POST]** * to `http://localhost:5000/api/logout`: returns a token to be added to the header of all other requests.
 * **[GET]** to `http://localhost:5000/api/colors`: returns the list of colors and their hex codes. This endpoint canYeah only be accessed by an autheticated user.
 * **[POST]** to `http://localhost:5000/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`). This endpoint can only be accessed by an autheticated user.
 * **[PUT]** to `http://localhost:5000/api/colors/:id`: updates the color using the `id` passed as part of the URL. Send the color object with the updated information as the `body` of the request (the second argument passed to `axios.put`). This endpoint can only be accessed by an authenticated user.
@@ -107,4 +111,4 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. Explain what a token is used for.
 2. What steps can you take in your web apps to keep your data secure?
 3. Describe how web servers work.
-4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers. 

@@ -24,6 +24,33 @@ body {
   }
 }
 
+form#edit_menu {
+  border-top: 2px solid black;
+  padding-top: 30px;
+
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+
+  legend {
+    padding-left: 40px;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: underline;
+    margin-bottom: 16px;
+  }
+
+  label {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 36px 4px 40px;
+  }
+
+  input {
+    width: 100px;
+  }
+}
+
 header {
   padding: 1em;
   background: black;
@@ -44,8 +71,8 @@ header {
   } 
 }
 
-.spacer {
-  // height: 100%;
+.container {
+  display:flex
 }
 
 .bubble-wrap {
@@ -81,30 +108,6 @@ header {
   width: 16px;
   border: 1px lightgray solid;
   margin-right: 36px;
-}
-
-form {
-  // margin-top: 60px;
-  // display: flex;
-  // flex-direction: column;
-
-  // legend {
-  //   padding-left: 40px;
-  //   font-weight: bold;
-  //   text-align: left;
-  //   text-decoration: underline;
-  //   margin-bottom: 16px;
-  // }
-
-  // label {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   padding: 4px 36px 4px 40px;
-  // }
-
-  // input {
-  //   width: 100px;
-  // }
 }
 
 .container {
