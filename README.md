@@ -70,18 +70,6 @@ Your finished project must include all of the following requirements. **Unlike o
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 * It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
-### Task 4: Stretch Goals
-
-**IMPORTANT:** Only work on stretch goals after completing your MVP!
-
-When completing these goals, make sure to use a **new branch** to ensure your MVP code is not overwritten. You can branch off `<firstName-lastName>` by executing `git checkout -b stretch`. When you are fully sure your stretch code is ready for feedback, merge your stretch code with main using `git checkout <firstName-lastName>` and `git merge stretch.`
-
-These goals may or may not be things you have learned in this module but they build on the material you just studied:
-
-* [ ] Build out another form to add a new color to your color list
-* [ ] Build a custom hook called `useApi` that you can use to make all of your API calls
-* [ ] Add more tests to give you further confidence in the code you're shipping
-
 ### Reference Materials
 
 #### API Documentation
@@ -111,4 +99,4 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. Explain what a token is used for.
 2. What steps can you take in your web apps to keep your data secure?
 3. Describe how web servers work.
-4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers. 
+4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
