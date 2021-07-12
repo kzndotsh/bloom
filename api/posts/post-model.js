@@ -6,22 +6,22 @@ module.exports = {
   remove,
 }
 
-function get() {
-  return Promise.resolve('get wired')
+async function get() {
+  return 'get wired'
 }
 
-function getById() {
-  return Promise.resolve('getById wired')
+async function getById() {
+  return 'getById wired'
 }
 
-function create() {
-  return Promise.resolve('create wired')
+async function create() {
+  return 'create wired'
 }
 
-function update() {
-  return Promise.resolve('update wired')
+async function update() {
+  return 'update wired'
 }
 
-function remove() {
-  return Promise.resolve('delete wired')
+async function remove() {
+  return 'delete wired'
 }
