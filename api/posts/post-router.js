@@ -38,7 +38,7 @@ router.post('/', checkPayload, async (req, res, next) => {
   }
 })
 
-router.put('/:id', checkPayload, checkId, async (req, res,next ) => {
+router.put('/:id', checkPayload, checkId, async (req, res, next) => {
   try {
     const data = await Post.update(req.params.id, req.body)
     res.json(data)
@@ -56,8 +56,11 @@ router.delete('/:id', checkId, async (req, res, next) => {
   }
 })
 
-router.use((err, req, res, next) => {
-  res.status(err.status || 500).json({ message: err.message, stack: err.stack })
+router.use((err, req, res, next) => { // eslint-disable-line
+  res.status(err.status || 500).json({
+    message: err.message,
+    stack: err.stack,
+  })
 })
 
 module.exports = router
