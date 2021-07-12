@@ -57,7 +57,7 @@ router.delete('/:id', checkId, async (req, res, next) => {
 })
 
 router.use((err, req, res, next) => {
-  res.status(500).json({ message: err.message, stack: err.stack })
+  res.status(err.status || 500).json({ message: err.message, stack: err.stack })
 })
 
 module.exports = router
