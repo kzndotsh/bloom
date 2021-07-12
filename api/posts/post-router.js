@@ -22,7 +22,7 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', checkId, async (req, res, next) => {
   try {
-    const data = await Post.getById()
+    const data = await Post.getById(req.params.id)
     res.json(data)
   } catch (err) {
     next(err)
@@ -31,7 +31,7 @@ router.get('/:id', checkId, async (req, res, next) => {
 
 router.post('/', checkPayload, async (req, res, next) => {
   try {
-    const data = await Post.create()
+    const data = await Post.create(req.body)
     res.json(data)
   } catch (err) {
     next(err)
@@ -40,7 +40,7 @@ router.post('/', checkPayload, async (req, res, next) => {
 
 router.put('/:id', checkPayload, checkId, async (req, res,next ) => {
   try {
-    const data = await Post.update()
+    const data = await Post.update(req.params.id, req.body)
     res.json(data)
   } catch (err) {
     next(err)
@@ -49,7 +49,7 @@ router.put('/:id', checkPayload, checkId, async (req, res,next ) => {
 
 router.delete('/:id', checkId, async (req, res, next) => {
   try {
-    const data = await Post.remove()
+    const data = await Post.remove(req.params.id)
     res.json(data)
   } catch (err) {
     next(err)
