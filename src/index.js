@@ -1,9 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-const { worker } = require("./mocks/browser");
+import React from 'react'
+import { BrowserRouter as Router} from "react-router-dom";
+import { render } from 'react-dom'
+import App from './components/App'
 
-worker.start();
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+render(
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById('root')
+)

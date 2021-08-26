@@ -1,31 +1,73 @@
-import React from "react";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
+
+import axios from 'axios';
 
 const Login = () => {
-  // make a post request to retrieve a token from the api
-  // when you have handled the token, navigate to the BubblePage route
-
-  const error = "";
-  //replace with error state
-
-  return (
-    <div>
-      <h1>Welcome to the Bubble App!</h1>
-      <div data-testid="loginForm" className="login-form">
-        <h2>Build login form here</h2>
-      </div>
-
-      <p id="error" className="error">{error}</p>
-    </div>
-  );
-};
+    
+    return(<ComponentContainer>
+        <ModalContainer>
+            <h1>Welcome to Blogger Pro</h1>
+            <h2>Please enter your account information.</h2>
+        </ModalContainer>
+    </ComponentContainer>);
+}
 
 export default Login;
 
-//Task List:
-//1. Build a form containing a username and password field.
-//2. Add whatever state necessary for form functioning.
-//4. If either the username or password is not entered, display the following words with the p tag provided: Username or Password not valid.
-//5. If the username / password is equal to "Lambda" / "School", save that token to localStorage and redirect to a BubblePage route.
-//6. MAKE SURE YOUR USERNAME AND PASSWORD INPUTS INCLUDE id="username" and id="password"
-//7. MAKE SURE YOUR SUBMIT BUTTON INCLUDES id="submit"
-//8. MAKE SURE YOUR ERROR p tag contains the id="error"
+//Task List
+//1. Build login form DOM from scratch, making use of styled components if needed.
+//2. Add in a p tag under the login form for use in error display.
+//3. Add in necessary local state to support login form and error display.
+//4. When login form is submitted, make an http call to the login route. Save the auth token on a successful response and redirect to view page.
+//5. If the response is not successful, display an error statement. **a server provided error message can be found in ```err.response.data```**
+//6. MAKE SURE TO ADD id="username", id="password", id="error" and id="submit" TO THE APPROPRIATE DOM ELEMENTS.
+
+const ComponentContainer = styled.div`
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+`
+
+const ModalContainer = styled.div`
+    width: 500px;
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border: rgb(50,50,50, 0.3) 3px solid;
+`
+
+const Label = styled.label`
+    display: block;
+    text-align: left;
+    font-size: 1.5rem;
+`
+
+const FormGroup = styled.div`
+    display:flex;
+    flex-direction: column;
+    padding: 0.5em 0;
+`
+
+const Input = styled.input`
+    font-size: 1rem;
+    padding: 1rem;
+`
+
+const Button = styled.button`
+    margin-top: 1em;
+    padding:1rem;
+    width: 100%;
+    background-color: rgb(87,125,159);
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 1.3em;
+`
+
+const ErrorDiv = styled.p`
+    color: #c41e1e;
+    font-size:1em;
+`
