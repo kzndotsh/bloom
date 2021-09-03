@@ -16,25 +16,14 @@ In this project you will create a login page and request a token from the server
 
 ## Instructions
 
-### Task 1: Project Setup
-
-* [ ] Fork and clone this repository.
-* [ ] Create a new branch with the 
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
-* [ ] **RUN** `npm install` to install your dependencies.
-* [ ] **RUN** `npm start` to start your application.
-
-### Task 2: CodeGrade Setup
-
-* [ ] Open the assignment in Canvas and click on the "Set up git" option.
-* [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`.
-* [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
-* [ ] Check to see that Codegrade has accepted your git submission.
-
-### Task 3: Project Requirements
-
+### Task 1: Transfer Repo
+* Clone this repository.
+* Implement the project on the automatically generated <firstName-lastName> branch, committing changes regularly.
+* Push commits: git push origin <firstName-lastName>.
+* RUN npm install to install your dependencies.
+* RUN npm start to start your application.
+ 
+### Task 2: Project Requirements
 Your finished project must include all of the following requirements. **Unlike other projects, the local server used here can not be accessed through the browser. It is started automatically and without the need for starting a server.js file. Feel free to ignore any messages related to MSW or mock service workers. For this and the rest of your sprint challenges, test the functioning of the server directly through your http calls.**
 
 **See reference materials at the bottom of the this document for details on use the API.**
