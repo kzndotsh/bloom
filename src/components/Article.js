@@ -20,18 +20,20 @@ const Article = (props)=> {
         </ArticleStyle>
         
         <ButtonContainer>
-            <button className="edit" data-testid="editButton" onClick={()=> {handleEditSelect(article.id)}}>Edit</button>
-            <button className="delete" data-testid="deleteButton" onClick={()=> {handleDelete(article.id)}}>Delete</button>                
+            <button data-testid="deleteButton" onClick={()=> {handleDelete(article.id)}}>Delete</button>                
+            <button data-testid="editButton" onClick={()=> {handleEditSelect(article.id)}}>Edit</button>
         </ButtonContainer>
     </div>);
 }
 
 export default Article;
 
+
 const ArticleStyle = styled.div`
     display: flex;
     flex-direction: row;
-    background: white;
+    padding: 0.5em; 
+    background: grey;
 `
 
 const Container = styled.div`
@@ -40,22 +42,11 @@ const Container = styled.div`
 
 const ButtonContainer = styled.div`
     padding: 1em;
-    position: relative;
-    top:-30px;
     text-transform: uppercase;
     text-align:right;
 
     button {
-        margin: 0.5em;
-        padding:1rem;
-        background-color: rgb(87,125,159);
-        color: white;
-        border: 0px;
-        border-radius: 5px;
-        font-size: 0.8em;
-    }
-    
-    .delete {
-        background-color: #e34b4b;
+        width: 100px;
+        padding:0.5em;
     }
 `

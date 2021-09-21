@@ -1,5 +1,5 @@
 const express = require('express')
-const Posts = require('./data')
+const Articles = require('./data')
 const cors = require('cors')
 const credentials = require('./credentials');
 
@@ -20,7 +20,7 @@ const authenticator = (req, res, next) => {
   }
 }
 
-//Get All Posts Endpoint
+//Get All Articles Endpoint
 api.post('/api/login', (req, res) => {
   const {username, password, role, token}  = credentials;
 
@@ -46,27 +46,27 @@ api.post('/api/logout', authenticator, (req, res) => {
 })
 
 api.get('/api/articles', authenticator, (req, res) => {
-  res.json(Posts.getAll())
+  res.json(Articles.getAll())
 })
 
 //Get Post Endpoint
 api.get('/api/articles/:id', authenticator, (req, res) => {
-  res.json(Posts.getById(req.params.id))
+  res.json(Articles.getById(req.params.id))
 })
 
 //Create Post Endpoint
 api.post('/api/articles', authenticator, (req, res) => {
-  res.json(Posts.create(req.body))
+  res.json(Articles.create(req.body))
 })
 
 //Edit Post Endpoint
 api.put('/api/articles/:id', authenticator, (req, res) => {
-  res.json(Posts.edit(req.params.id, req.body))
+  res.json(Articles.edit(req.params.id, req.body))
 })
 
 //Delete Post Endpoint
 api.delete('/api/articles/:id', authenticator, (req, res) => {
-  res.json(Posts.remove(req.params.id))
+  res.json(Articles.remove(req.params.id))
 })
 
 api.listen(5000, () => {

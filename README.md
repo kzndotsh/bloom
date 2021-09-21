@@ -38,6 +38,13 @@ Your finished project must include all of the following requirements.
 
 **See reference materials at the bottom of the this document for API Reference Details.**
 
+#### Basic Routing
+> *Build the needed utilities to restrict access to private routes.*
+* [ ] Build a `Route` component that renders rendering `Login.js` to the path `/`.
+* [ ] Build a `Route` component that renders rendering `Login.js` to the path `/login`.
+* [ ] Build a `Route` component that renders rendering `View.js` to the path `/view`.
+* [ ] Build a `Route` component that renders rendering `Logout.js` to the path `/logout`.
+
 #### Login Authentication
 > *Build a login form to authenticate your users along with all the components and utilities needed to support authentication.*
 
@@ -50,7 +57,6 @@ Your finished project must include all of the following requirements.
 * [ ] Display an appropriate error message when login is not successful.
 
 #### Route Authentication
-> *Build the needed utilities to restrict access to private routes.*
 * [ ] Build a `PrivateRoute` component within the components folder.
 * [ ] Use the `PrivateRoute` component to build a route rendering `View.js` to the path `/view`.
 * [ ] Use the `PrivateRoute` component to build a route rendering `Logout.js` to the path `/logout`.
@@ -58,13 +64,13 @@ Your finished project must include all of the following requirements.
 #### Request Authentication
 > *Complete the requests needed to execute all CRUD functions.*
 * [ ] Build a `axiosWithAuth` module within the utils folder to create an instance of axios with the authentication header.
-* [ ] Complete the `services/articleService.js` module. It should make an authenticated call to retrieve and return all articles from the server.
+* [ ] Complete the `services/articleService.js` module. It should use make an authenticated call to retrieve and return all articles from the server.
 
 * [ ] In `View.js`, when the component mounts, use `articleService` to make an http request and add all articles to state.
 
 * [ ] In `View.js`, complete `handleDelete` so that a http request is made that deletes the article with the included id. After successfully deleting the article on the api, update local state to reflect these changes.
 
-* [ ] In `EditForm.js`, make a http request to get the article with the id `editId`. Save the result in state.
+* [ ] `editId` is passed into the `EditForm` component. In `EditForm.js`, make a http request on mount to get the article with the id `editId`. Save the result in state.
 
 * [ ] In `View.js`, complete `handleEdit` so that a http request is made that updates the passed in article. Set the editing state to false when the request is complete. After successfully deleting the article on the api, update local state to reflect these changes.
 
@@ -99,13 +105,15 @@ Your finished project must include all of the following requirements.
 
 * **[POST]** * to `http://localhost:5000/api/logout`: returns the expired authentication information of the user.
 
-* **[GET]** to `http://localhost:5000/api/posts`: returns the all posts currently available. **This endpoint can only be accessed by an authenticated user.**
+* **[GET]** to `http://localhost:5000/api/articles`: returns the all articles currently available. **This endpoint can only be accessed by an authenticated user.**
 
-* **[POST]** to `http://localhost:5000/api/posts`: creates a article object. Returns all available articles. Pass the article as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
+* **[GET]** to `http://localhost:5000/api/articles/:id`: returns a single article with the id. **This endpoint can only be accessed by an authenticated user.**
 
-* **[PUT]** to `http://localhost:5000/api/posts/:id`: updates the article using the `id` passed as part of the URL. Returns all available articles. Send the updated article object as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
+* **[POST]** to `http://localhost:5000/api/articles`: creates a article object. Returns all available articles. Pass the article as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
 
-* **[DELETE]** to `http://localhost:5000/api/posts/:id`: removes the article with the `id` referenced. Returns all available articles. **This endpoint can only be accessed by an authenticated user.**
+* **[PUT]** to `http://localhost:5000/api/articles/:id`: updates the article using the `id` passed as part of the URL. Returns all available articles. Send the updated article object as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
+
+* **[DELETE]** to `http://localhost:5000/api/articles/:id`: removes the article with the `id` referenced. Returns all available articles. **This endpoint can only be accessed by an authenticated user.**
 
 #### Article Data Structure
 ```
