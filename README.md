@@ -2,40 +2,36 @@
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project. This sprint explored **advanced web applications**. During this sprint, you studied **React testing, client-side auth, HTTP methods, and Vercel**.
-
-In your challenge this week, you will demonstrate your mastery of these skills by creating **a login page** and **basic CRUD application.**
+This challenge allows you to practice the concepts and techniques learned over the past sprint and apply them in a concrete project.
 
 This is an individual assessment. All work must be your own. All projects will be submitted to codegrade for automated review. You will also be given feedback by code reviewers the Monday (Wednesday for PT) after challenge submissions. For more information on the review process [click here.](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
 
-You are not allowed to collaborate during the sprint challenge. However, you are encouraged to follow the twenty-minute rule and seek support by dropping a :wave: in your help channel when needed.
+You are not allowed to collaborate during the sprint challenge.
 
 ## Introduction
 
-In this project you will create a login page and request a token from the server that you'll use to send all other requests to the server. You will then be able to fetch the article data array, update data, and delete data, and watch the fun happen!
+In this challenge you will create a login page and request a token from the server that you'll use to send all other requests to the server. You will then be able to fetch the article data array, update data, and delete data.
 
-## Instructions
+## Project Setup
+[ ] Run npm install to install your dependencies.
+[ ]  Run npm start to run your frontend and backend code automatically.
+[ ]  Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
 
-### Task 1: Transfer Repo
-* Clone this repository.
-* Implement the project on the automatically generated <firstName-lastName> branch, committing changes regularly.
-* Push commits: git push origin <firstName-lastName>.
-* RUN npm install to install your dependencies.
-* RUN npm start to start your application.
+## Project Instructions
+In this project, you will demonstrate your mastery of these skills by creating **a login page** and **basic CRUD application.** You will implement basic security using **token authentication** and build private routes within the applcation.
  
-### Task 2: Project Requirements
-Your finished project must include all of the following requirements. **Unlike other projects, the local server used here can not be accessed through the browser. It is started automatically and without the need for starting a server.js file. Feel free to ignore any messages related to MSW or mock service workers. For this and the rest of your sprint challenges, test the functioning of the server directly through your http calls.**
+## Project Requirements
 
 **See reference materials at the bottom of the this document for API Reference Details.**
 
-#### Basic Routing
+### Basic Routing
 > *Build the needed utilities to restrict access to private routes.*
 * [ ] Build a `Route` component that renders rendering `Login.js` to the path `/`.
 * [ ] Build a `Route` component that renders rendering `Login.js` to the path `/login`.
 * [ ] Build a `Route` component that renders rendering `View.js` to the path `/view`.
 * [ ] Build a `Route` component that renders rendering `Logout.js` to the path `/logout`.
 
-#### Login Authentication
+### Login Authentication
 > *Build a login form to authenticate your users along with all the components and utilities needed to support authentication.*
 
 * [ ] In `Login.js`, build all UI and state functionality needed to capture a username and password. On a successful login, redirect user to the `View.js` component.
@@ -46,12 +42,12 @@ Your finished project must include all of the following requirements. **Unlike o
 * [ ] Construct an http request that retrieves an auth token from the server when the username `Lambda` and the password `School` is passed into the request. Complete successful login auth flow and redirect to `View.js.`
 * [ ] Display an appropriate error message when login is not successful.
 
-#### Route Authentication
+### Route Authentication
 * [ ] Build a `PrivateRoute` component within the components folder.
 * [ ] Use the `PrivateRoute` component to build a route rendering `View.js` to the path `/view`.
 * [ ] Use the `PrivateRoute` component to build a route rendering `Logout.js` to the path `/logout`.
 
-#### Request Authentication
+### Request Authentication
 > *Complete the requests needed to execute all CRUD functions.*
 * [ ] Build a `axiosWithAuth` module within the utils folder to create an instance of axios with the authentication header.
 * [ ] Complete the `services/articleService.js` module. It should use make an authenticated call to retrieve and return all articles from the server.
@@ -65,12 +61,12 @@ Your finished project must include all of the following requirements. **Unlike o
 * [ ] In `View.js`, complete `handleEdit` so that a http request is made that updates the passed in article. Set the editing state to false when the request is complete. After successfully deleting the article on the api, update local state to reflect these changes.
 
 
-#### Logout Authentication
+### Logout Authentication
 > *Add in the http requests needed to logout of the application.*
 
 * [ ] In `Logout.js`, execute a http request to logout on mount. When the request is complete, the user's security token should be removed and the browser should redirect to the login page.
 
-#### Advanced Testing
+### Advanced Testing
 > *Add the following tests within Article.test.js.*
 * [ ] Build a test that shows the `Article` component, given the correct props, can render without errors.
 * [ ] Build a test that shows that when a correctly formatted article is passed into the `Article` component, the correct headline, author, summary and body are displayed.
@@ -81,16 +77,14 @@ Your finished project must include all of the following requirements. **Unlike o
 * [ ] Build a test that shows the `View` component can render zero articles without errors. Make sure the mock service called made when View mounts.
 * [ ] Build a test that shows the `View` component can render three articles without errors. Make sure the mock service called made when View mounts.
 
-**Notes:**
+## Important Notes:
 * You are welcome to create additional files but **do not move or rename existing files** or folders.
 * Do not change your `package.json` file except to install additional libraries.
 * In your solution, it is essential that you follow best practices and produce clean and professional results.
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 * It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
-### Reference Materials
-
-#### API Documentation
+### API Documentation
 * **[POST]** * to `http://localhost:5000/api/login`: returns a the current authenication information of the user. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda', password: 'School' }` for a successful login.
 
 * **[POST]** * to `http://localhost:5000/api/logout`: returns the expired authentication information of the user.
@@ -118,16 +112,18 @@ Your finished project must include all of the following requirements. **Unlike o
 ```
 
 ## Submission format
-* [ ] Submit via Codegrade by committing and pushing any new changes.
-* [ ] Check codegrade for automated feedback.
-* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
-* [ ] Any changes pushed to your "main" branch will resubmitted to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
+* [ ] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
+* [ ] Check Codegrade before the deadline to compare its results against your local tests.
+* [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
-
 1. Explain what a token is used for.
+
 2. What steps can you take in your web apps to keep your data secure?
+
 3. Describe how web servers work.
+
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
