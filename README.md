@@ -16,25 +16,15 @@ In this project you will create a login page and request a token from the server
 
 ## Instructions
 
-### Task 1: Project Setup
-
-* [ ] Fork and clone this repository.
-* [ ] Implement the project with the `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
-* [ ] **RUN** `npm install` to install your dependencies.
-* [ ] **RUN** `npm start` to start your application backend and frontend.
-* [ ] **RUN** `npm test` to start your application's test runner.
-
-### Task 2: CodeGrade Setup
-
-* [ ] Open the assignment in Canvas and click on the "Set up git" option.
-* [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`. **Make sure to add in `?branch=<firstname-lastname>` at the end of your webhook payload URL.**
-* [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
-* [ ] Check to see that Codegrade has accepted your git submission.
-
-### Task 3: Project Requirements
-
-Your finished project must include all of the following requirements.
+### Task 1: Transfer Repo
+* Clone this repository.
+* Implement the project on the automatically generated <firstName-lastName> branch, committing changes regularly.
+* Push commits: git push origin <firstName-lastName>.
+* RUN npm install to install your dependencies.
+* RUN npm start to start your application.
+ 
+### Task 2: Project Requirements
+Your finished project must include all of the following requirements. **Unlike other projects, the local server used here can not be accessed through the browser. It is started automatically and without the need for starting a server.js file. Feel free to ignore any messages related to MSW or mock service workers. For this and the rest of your sprint challenges, test the functioning of the server directly through your http calls.**
 
 **See reference materials at the bottom of the this document for API Reference Details.**
 
@@ -50,8 +40,8 @@ Your finished project must include all of the following requirements.
 
 * [ ] In `Login.js`, build all UI and state functionality needed to capture a username and password. On a successful login, redirect user to the `View.js` component.
 * [ ] **Make sure that the input for your username and password includes the id="username" and id="password" attributes. Codegrade autotests will fail without them.**
-* [ ] **Make sure that the submit button to your login form includes the id="submit" attribute.**
-* [ ] In `Login.js`, add a p tag that will hold an error state if occurs. Add in all state functionality needed to support error display.
+* [ ] **Make sure that the submit button to your login form includes the id="submit" attribute.  Codegrade autotests will fail without them.**
+* [ ] In `Login.js`, add a p tag that will display an error if one occurs. Add in all state functionality needed to support error display.
 * [ ] **Make sure your error p tag has an id="error" attribute attached. Codegrade autotests will fail without them.**
 * [ ] Construct an http request that retrieves an auth token from the server when the username `Lambda` and the password `School` is passed into the request. Complete successful login auth flow and redirect to `View.js.`
 * [ ] Display an appropriate error message when login is not successful.
@@ -128,10 +118,10 @@ Your finished project must include all of the following requirements.
 ```
 
 ## Submission format
-* [ ] Submit via Codegrade by commiting and pushing any new changes.
+* [ ] Submit via Codegrade by committing and pushing any new changes.
 * [ ] Check codegrade for automated feedback.
-* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
+* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback.
+* [ ] Any changes pushed to your "main" branch will resubmitted to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 
 ## Interview Questions
 
