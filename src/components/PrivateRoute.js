@@ -1,2 +1,11 @@
+import React from "react";
+import { Route } from "react-router-dom";
+
+function PrivateRoute() {
+  return (<Route/>);
+}
+
+export default PrivateRoute;
+
 //Task List:
-//1. Build a PrivateRoute component that redirects if user is not logged in
+//1. Complete PrivateRoute

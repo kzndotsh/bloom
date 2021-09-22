@@ -1,224 +1,88 @@
-import { rest } from "msw";
+import { rest } from 'msw'
+import Articles from './data'
+import credentials from './credentials';
 
-let colors = [
-  {
-    color: "aliceblue",
-    code: {
-      hex: "#f0f8ff",
-    },
-    id: 1,
-  },
-  {
-    color: "limegreen",
-    code: {
-      hex: "#99ddbc",
-    },
-    id: 2,
-  },
-  {
-    color: "aqua",
-    code: {
-      hex: "#00ffff",
-    },
-    id: 3,
-  },
-  {
-    color: "aquamarine",
-    code: {
-      hex: "#7fffd4",
-    },
-    id: 4,
-  },
-  {
-    color: "lilac",
-    code: {
-      hex: "#9a99dd",
-    },
-    id: 5,
-  },
-  {
-    color: "softpink",
-    code: {
-      hex: "#dd99ba",
-    },
-    id: 6,
-  },
-  {
-    color: "bisque",
-    code: {
-      hex: "#dd9a99",
-    },
-    id: 7,
-  },
-  {
-    color: "softyellow",
-    code: {
-      hex: "#dcdd99",
-    },
-    id: 8,
-  },
-  {
-    color: "blanchedalmond",
-    code: {
-      hex: "#ffebcd",
-    },
-    id: 9,
-  },
-  {
-    color: "blue",
-    code: {
-      hex: "#6093ca",
-    },
-    id: 10,
-  },
-  {
-    color: "blueviolet",
-    code: {
-      hex: "#8a2be2",
-    },
-    id: 11,
-  },
-];
-
-let nextId = 12;
-
-const urlBase = 'http://localhost:5000/api';
-
-const correctCredientials = {
-  username: "Lambda",
-  password: "School",
-  token:"ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98"
+function authenticator(req, resp) {
+  const { authorization } = req.headers._headers;
+  return (authorization === credentials.token)?resp():res( ctx.status(403),ctx.json({ error: 'User not currently logged in.' }));
 }
 
 
-function authenticator(req) {
-  const { authorization } = req.headers.map;
-  return (authorization === correctCredientials.token);
+function login(req, res, ctx) {
+  const {username, password, role, token}  = credentials;
+  
+  if (username === req.body.username && password === req.body.password) {
+    return res(ctx.json({
+      username,
+      role,
+      token
+    }))
+  } else {
+    return res( ctx.status(403),ctx.json({ error: 'Incorrect username / password combination.' }));
+  }
 }
 
-
-export const handlers = [
-  // Handles a POST /login request
-  rest.post(`${urlBase}/login`, (req, res, ctx) => {
-    const { username, password } = req.body;
-    if (username === correctCredientials.username && password === correctCredientials.password) {
-      return res(
-          ctx.status(200),
-          ctx.json({
-              payload: correctCredientials.token,
-          }))
-    } else {
-        return res(
-            ctx.status(403),
-            ctx.json({ error: "Username or Password incorrect. Please see Readme" })
-        );
-    }
-  }),
-
-  rest.post(`${urlBase}/logout`, (req, res, ctx) => {
-    if (authenticator(req)) {
-      return res(
-        ctx.status(200),
-        ctx.json({
-            payload: correctCredientials.token,
-        })
-      );
-    } else {
-      res(
-        ctx.status(403),
-        ctx.json({ error: "User must be logged in to do that." })
-      )
-    }
-  }),
-
-  // Handles a GET /user request
-  rest.get(`${urlBase}/colors`, (req, res, ctx) => {
-    if (authenticator(req)) {
-      return res(
-        ctx.status(200),
-        ctx.json(colors)
-      );
-    } else {
-      res(
-        ctx.status(403),
-        ctx.json({ error: "User must be logged in to do that." })
-      )
-    }
-  }),
-
-  rest.post(`${urlBase}/colors`, (req, res, ctx) => {
-    if (authenticator(req)) {
-      if (req.body.color !== undefined && req.body.code !== undefined) {
-        const newColor = req.body;
-        newColor.id = nextId;
-        colors.push(newColor);
-      }
-      nextId = nextId + 1;
-      return res(
-        ctx.status(201), 
-        ctx.json(colors)
-      );
-    } else {
-      return res(
-        ctx.status(403),
-        ctx.json({ error: "User must be logged in to do that." })
-      )
-    }
-  }),
-
-  rest.put(`${urlBase}/colors/:id`, (req, res, ctx) => {
-    if (authenticator(req)) {
-      if (!req.params.id) {
-        return res(
-          ctx.status(400),
-          ctx.json("Your request is missing the color id")
-        );
-      }
-
-      if (req.body.id === undefined || !req.body.color || !req.body.code) {
-        return res(
-          ctx.status(422),
-          ctx.json("Make sure your request body has all the fields it needs")
-        );
-      }
-
-      colors = colors.map((color) => {
-        if (`${color.id}` === req.params.id) {
-          return req.body;
-        }
-        return color;
-      });
-
-      return res(ctx.status(200), ctx.json(req.body));
-    } else {
-      return res(
-        ctx.status(403),
-        ctx.json({ error: "User must be logged in to do that." })
-      );
-    }
-  }),
-
-  rest.delete(`${urlBase}/colors/:id`, (req, res, ctx) => {
-    if (authenticator(req)) {
-      if (!req.params.id)
-        return res(
-          ctx.status(400),
-          ctx.json("Your request is missing the color id")
-        );
-      colors = colors.filter((color) => `${color.id}` !== req.params.id);
-      return res(ctx.status(202), ctx.json(req.params.id));
-    } else {
-      return res(
-        ctx.status(403),
-        ctx.json({ error: "User must be logged in to do that." })
-      )
-    }
-  }),
-
-  rest.get(urlBase, function (req, res, ctx) {
+function logout(req, res, ctx) {
+  return (authenticator(req), ()=>{
     return res(
       ctx.status(200),
-      ctx.json("The App is working!")
-    );
+      ctx.json(Articles.getAll())
+    )
   })
-];
+}
+
+
+function getAll(req, res, ctx) {
+  return (authenticator(req, ()=>{
+    return res(
+      ctx.status(200),
+      ctx.json(Articles.getAll())
+    );
+  }))
+}
+
+function getById(req, res, ctx) {
+  return (authenticator(req, ()=>{
+    return res(
+      ctx.status(200),
+      ctx.json(Articles.getById(req.params.id))
+    )
+  }))
+}
+
+function create(req, res, ctx) {
+  return (authenticator(req, ()=> {
+    return res(
+      ctx.status(200),
+      ctx.json(Articles.create(req.body))
+    )
+  }))
+}
+
+function edit(req, res, ctx) {
+  return (authenticator(req, ()=> {
+    return res(
+      ctx.status(200),
+      ctx.json(Articles.edit(req.params.id, req.body))
+    )
+  }))
+}
+
+function remove(req, res, ctx) {
+  return (authenticator(req, ()=> {
+    return res(
+      ctx.status(200),
+      ctx.json(Articles.remove(req.params.id))
+    )
+  }))
+}
+
+export const handlers = [
+  rest.post('http://localhost:5000/api/login', login),
+  rest.post('http://localhost:5000/api/logout', logout),
+  rest.get('http://localhost:5000/api/articles', getAll),
+  rest.get('http://localhost:5000/api/articles/:id', getById),
+  rest.post('http://localhost:5000/api/articles', create),
+  rest.put('http://localhost:5000/api/articles/:id', edit),
+  rest.delete('http://localhost:5000/api/articles/:id', remove)
+]
