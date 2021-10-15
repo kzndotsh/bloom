@@ -126,7 +126,7 @@ module.exports = {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   "setupFiles": [
-    "./jest.setup.js"
+    "./jest.globals.js"
   ],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
@@ -186,8 +186,7 @@ module.exports = {
   // unmockedModulePathPatterns: undefined,
 
   // Indicates whether each individual test should be reported during the run
-  // verbose: false,
-
+  // verbose: undefined,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],

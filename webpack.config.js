@@ -16,7 +16,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'dist'),
     compress: true,
     historyApiFallback: true,
     port: 3000,
@@ -38,7 +38,7 @@ module.exports = {
             'plugins': [['babel-plugin-styled-components'], ['@babel/plugin-transform-react-jsx']]
           }
         },
-      },
+      }
     ],
   },
 }
