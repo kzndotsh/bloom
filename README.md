@@ -16,5 +16,7 @@ In this project we will cover the basics of `Structure Query Language (SQL)`, `R
 
 ## Coding Along
 
+Before using the following scripts it's recommended to remove the database from SQLite Studio.
+
 - [ ] type `npm run resetdb` to reset the database to its initial state.
-- [ ] type `npm run ketchup` to hard reset to the instructor's remote branch.
+- [ ] type `npm run ketchup` to hard reset your code to the instructor's remote branch.
