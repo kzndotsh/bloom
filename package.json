@@ -5,17 +5,17 @@
   "scripts": {
     "server": "nodemon index.js",
     "ketchup": "git fetch && git reset --hard origin/lecture",
-    "resetdb": "knex migrate:rollback && knex migrate:latest && knex seed:run"
+    "resetdb": "cp -rf ./data/northwind/backup.db3 ./data/northwind.db3"
   },
   "repository": "https://github.com/LambdaSchool/node-db1-guided.git",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.95.12",
+    "knex": "^0.95.14",
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
-    "eslint": "^8.1.0",
-    "nodemon": "^2.0.14"
+    "eslint": "^8.2.0",
+    "nodemon": "^2.0.15"
   }
 }

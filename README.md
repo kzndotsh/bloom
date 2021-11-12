@@ -12,3 +12,9 @@ In this project we will cover the basics of `Structure Query Language (SQL)`, `R
 - [ ] clone this repository.
 - [ ] move into the project folder.
 - [ ] type `npm i` to download dependencies.
+- [ ] type `npm run server` to start the dev server.
+
+## Coding Along
+
+- [ ] type `npm run resetdb` to reset the database to its initial state.
+- [ ] type `npm run ketchup` to hard reset to the instructor's remote branch.
