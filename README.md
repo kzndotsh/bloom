@@ -18,8 +18,38 @@ In this challenge you will create a login page and request a token from the serv
 [ ]  Note your backend code will run automatically when your run npm start. There is no need to seperately run a server.js file and no means to test the server through postman or the browser. Feel free to ignore any messages related to MSW or mock service workers.
 
 ## Project Instructions
-In this project, you will demonstrate your mastery of these skills by creating **a login page** and **basic CRUD application.** You will implement basic security using **token authentication** and build private routes within the applcation.
- 
+In this project, you will demonstrate your mastery of these skills by creating **a login page** and **basic CRUD application.** You will implement basic security using **token authentication** and build private routes within the application.
+
+### API Documentation
+* **[POST]** * to `http://localhost:5000/api/login`: returns a the current authenication information of the user. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda', password: 'School' }` for a successful login.
+
+* **[POST]** * to `http://localhost:5000/api/logout`: returns the expired authentication information of the user.
+
+* **[GET]** to `http://localhost:5000/api/articles`: returns the all articles currently available. **This endpoint can only be accessed by an authenticated user.**
+
+* **[GET]** to `http://localhost:5000/api/articles/:id`: returns a single article with the id. **This endpoint can only be accessed by an authenticated user.**
+
+* **[POST]** to `http://localhost:5000/api/articles`: creates a article object. Returns all available articles. Pass the article as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
+
+* **[PUT]** to `http://localhost:5000/api/articles/:id`: updates the article using the `id` passed as part of the URL. Returns all available articles. Send the updated article object as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
+
+* **[DELETE]** to `http://localhost:5000/api/articles/:id`: removes the article with the `id` referenced. Returns all available articles. **This endpoint can only be accessed by an authenticated user.**
+
+#### Article Data Structure
+```
+{
+    id: 'aMqwd', //unique article id
+    headline: "headline", //title of article
+    createdOn: '2021-08-09T18:02:38-04:00 
+', //timestamp of when article was added
+    summary: "summary", //short summary statement of article
+      body: ""  //paragraph of article text
+}
+```
+
+## Example Finished Project
+![Example Finished Project](./project_example.gif)
+
 ## Project Requirements
 
 **See reference materials at the bottom of the this document for API Reference Details.**
@@ -50,9 +80,8 @@ In this project, you will demonstrate your mastery of these skills by creating *
 ### Request Authentication
 > *Complete the requests needed to execute all CRUD functions.*
 * [ ] Build a `axiosWithAuth` module within the utils folder to create an instance of axios with the authentication header.
-* [ ] Complete the `services/articleService.js` module. It should use make an authenticated call to retrieve and return all articles from the server.
 
-* [ ] In `View.js`, when the component mounts, use `articleService` to make an http request and add all articles to state.
+* [ ] In `View.js`, complete `handleDelete` so that a http request is made that deletes the article with the included id. After successfully deleting the article on the api, update local state to reflect these changes.
 
 * [ ] In `View.js`, complete `handleDelete` so that a http request is made that deletes the article with the included id. After successfully deleting the article on the api, update local state to reflect these changes.
 
@@ -73,43 +102,12 @@ In this project, you will demonstrate your mastery of these skills by creating *
 * [ ] The `Article` component should display "Associated Press" when an author attribute is not avalible. Build a test that verifies that that is true.
 * [ ] Build a test that show that when the deleteButton is pressed on an Article, the handleDelete functional property is executed.
 
-> *Add the following tests within View.test.js.*
-* [ ] Build a test that shows the `View` component can render zero articles without errors. Make sure the mock service called made when View mounts.
-* [ ] Build a test that shows the `View` component can render three articles without errors. Make sure the mock service called made when View mounts.
-
 ## Important Notes:
 * You are welcome to create additional files but **do not move or rename existing files** or folders.
 * Do not change your `package.json` file except to install additional libraries.
 * In your solution, it is essential that you follow best practices and produce clean and professional results.
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 * It is better to submit a challenge that meets MVP than one that attempts too much and does not.
-
-### API Documentation
-* **[POST]** * to `http://localhost:5000/api/login`: returns a the current authenication information of the user. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda', password: 'School' }` for a successful login.
-
-* **[POST]** * to `http://localhost:5000/api/logout`: returns the expired authentication information of the user.
-
-* **[GET]** to `http://localhost:5000/api/articles`: returns the all articles currently available. **This endpoint can only be accessed by an authenticated user.**
-
-* **[GET]** to `http://localhost:5000/api/articles/:id`: returns a single article with the id. **This endpoint can only be accessed by an authenticated user.**
-
-* **[POST]** to `http://localhost:5000/api/articles`: creates a article object. Returns all available articles. Pass the article as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
-
-* **[PUT]** to `http://localhost:5000/api/articles/:id`: updates the article using the `id` passed as part of the URL. Returns all available articles. Send the updated article object as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
-
-* **[DELETE]** to `http://localhost:5000/api/articles/:id`: removes the article with the `id` referenced. Returns all available articles. **This endpoint can only be accessed by an authenticated user.**
-
-#### Article Data Structure
-```
-{
-    id: 'aMqwd', //unique article id
-    headline: "headline", //title of article
-    createdOn: '2021-08-09T18:02:38-04:00 
-', //timestamp of when article was added
-    summary: "summary", //short summary statement of article
-      body: ""  //paragraph of article text
-}
-```
 
 ## Submission format
 * [ ] Submit via Codegrade by commiting and pushing any new changes to **your main branch.**
@@ -119,7 +117,8 @@ In this project, you will demonstrate your mastery of these skills by creating *
 
 ## Interview Questions
 
-Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
+Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
+
 1. Explain what a token is used for.
 
 2. What steps can you take in your web apps to keep your data secure?
