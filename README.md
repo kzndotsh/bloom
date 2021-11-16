@@ -1,6 +1,6 @@
 # Sprint 3 - Module 4 : Web Deployment
 
-## [Training Kit](https://github.com/LambdaSchool/Full-Stack-Web-Curriculum/tree/main/03-WebApplications-II/Sprint%2003%20-%20Advanced%20Web%20Applications/Module%204%20-%20Deploying%20Web%20Apps)
+## [Training Kit](https://github.com/BloomInstituteOfTechnology/Full-Stack-Web-Curriculum/tree/main/03-WebApplications-II/Sprint%2003%20-%20Advanced%20Web%20Applications/Module%204%20-%20Deploying%20Web%20Apps)
 
 ----
 
@@ -14,10 +14,10 @@ By the end of this module, learners should be able to:
 ----
 
 ## Instructor Resources
-* 🐙 [Guided Project Starter](https://github.com/LambdaSchool/web-guided-project-deploying-web-apps)
-* 🐙 [Guided Project Solution](https://github.com/LambdaSchool/web-guided-project-deploying-web-apps-solution)
-* 🐙 [Module Project](https://github.com/LambdaSchool/web-module-project-deploying-web-apps)
-* 🐙 [Module Project Solution](https://github.com/LambdaSchool/web-module-project-deploying-web-apps-solution)
+* 🐙 [Guided Project Starter](https://github.com/BloomInstituteOfTechnology/web-guided-project-deploying-web-apps)
+* 🐙 [Guided Project Solution](https://github.com/BloomInstituteOfTechnology/web-guided-project-deploying-web-apps-solution)
+* 🐙 [Module Project](https://github.com/BloomInstituteOfTechnology/web-module-project-deploying-web-apps)
+* 🐙 [Module Project Solution](https://github.com/BloomInstituteOfTechnology/web-module-project-deploying-web-apps-solution)
 
 ----
 
@@ -36,7 +36,7 @@ By the end of this module, learners should be able to:
 > _______________________________________________________
 > Zoom Link : *insert zoom link*
 > Slido: *insert slido link*
-> Module Project: https://github.com/LambdaSchool/web-module-project-deploying-web-apps
+> Module Project: https://github.com/BloomInstituteOfTechnology/web-module-project-deploying-web-apps
 
 ----
 
@@ -170,7 +170,7 @@ This project is a pretty light project. Let TLs know this, and let them know to 
 Also, many students have asked about just using Netlify for this modules. This point here is to use Zeit and try a different tool. If they don't want to add a project that's been deployed to Zeit on their portfolio, they can get approval form their TL to just deploy any project to Zeit and show that they have completed that.
 
 ### Module Project Review
-* [Deploying Web Apps](https://github.com/LambdaSchool/web-module-project-deploying-web-apps)
+* [Deploying Web Apps](https://github.com/BloomInstituteOfTechnology/web-module-project-deploying-web-apps)
 
 ## Breakout Slack Messages
 
@@ -181,7 +181,7 @@ Hope you all enjoyed today's guided Lesson!
 A reminder if that office hours are from 2:30 - 3:00 Lambda Time. Don't forget to complete the days Check for Understanding and Pulse Checks! 
 
 Module Project
-https://github.com/LambdaSchool/web-module-project-deploying-web-apps
+https://github.com/BloomInstituteOfTechnology/web-module-project-deploying-web-apps
 
 Here is a review of today's material.
 
