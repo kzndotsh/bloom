@@ -1,13 +1,10 @@
 import React from 'react';
-import { Route, Redirect } from "react-router-dom";
-import PrivateRoute from './PrivateRoute';
+import { Route } from "react-router-dom";
 import styled from 'styled-components';
 
 import Header from './Header';
 import BloomHeader from './BloomHeader';
-import View from './View';
 import Login from './Login';
-import Logout from './Logout';
 
 const App = () => {
   return (
