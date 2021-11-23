@@ -65,3 +65,9 @@ In this project you will build an application that allows for github user and fo
 - [ ] We are making several api calls of the same type in our code. How can we make this portion more dry?
 - [ ] Add in functionality so that when a follower is clicked, they will become the searched user. Have the UI update approprately.
 - [ ] Push your styling! Have fun!
+
+## Submission Format
+- [ ] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
+- [ ] Connect your fork to Codegrade using the "Connect Git" button.
+- [ ] Find your newly created fork from the list and push your work to main.
+- [ ] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ
