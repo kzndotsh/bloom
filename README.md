@@ -27,5 +27,8 @@ Do not attempt stretch problems until MVP has been reached and a final commit ha
 
 Work on deploying a second, or even third portfolio project. If you have extra time, go back and update the styles, add features, fix bugs, etc, on all the sites so that they will look good for potential employers.
 
-## Submission Format
-* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+### Submission Format
+- [ ] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
+- [ ] Connect your fork to Codegrade using the "Connect Git" button.
+- [ ] Find your newly created fork from the list and push your work to main.
+- [ ] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ
