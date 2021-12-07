@@ -7,7 +7,7 @@
     "ketchup": "git fetch && git reset --hard origin/lecture",
     "resetdb": "cp -rf ./data/northwind/backup.db3 ./data/northwind.db3"
   },
-  "repository": "https://github.com/LambdaSchool/node-db1-guided.git",
+  "repository": "https://github.com/bloominstituteoftechnology/node-db1-guided.git",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
@@ -15,7 +15,7 @@
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
-    "eslint": "^8.2.0",
+    "eslint": "^8.4.1",
     "nodemon": "^2.0.15"
   }
 }
