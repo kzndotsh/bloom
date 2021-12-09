@@ -19,9 +19,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BloomInstituteOfTechnology/node-db4-guided.git"
-  },
-  "license": "ISC",
-  "volta": {
-    "node": "16.13.0"
   }
 }
