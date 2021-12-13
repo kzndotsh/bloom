@@ -8,7 +8,7 @@ const BloomHeader = () => {
     </HeaderStyle>);
 }
 
-export default LambdaBloomHeaderHeader;
+export default BloomHeader;
 
 const HeaderStyle = styled.nav`
   padding: 0.5em;
