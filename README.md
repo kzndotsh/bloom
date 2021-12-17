@@ -47,9 +47,6 @@ In this project, you will demonstrate your mastery of these skills by creating *
 }
 ```
 
-## Example Finished Project
-![Example Finished Project](./project_example.gif)
-
 ## Project Requirements
 
 **See reference materials at the bottom of the this document for API Reference Details.**
