@@ -1,15 +1,8 @@
 const express = require('express')
 const Shipper = require('./shippers-model')
+const { checkId, checkPayload } = require('./shippers-middleware')
 
 const router = express.Router()
-
-function checkId(req, res, next) {
-  next()
-}
-
-function checkPayload(req, res, next) {
-  next()
-}
 
 router.get('/', async (req, res, next) => {
   try {
