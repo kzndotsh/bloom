@@ -25,7 +25,5 @@ Think about which project you are most proud of up to this point that you have b
 * [ ] Rebuild a static (non-api accessing) project here based on a previous assignment.
 * [ ] Deploy to vercel.
 
-## Submission Format
-- [ ] Only work on main.
-- [ ] Make sure to push your code at regular intervals.
-- [ ] Copy your deployed vercel url and paste it into canvas to submit your project.
+### Submission Format
+- [ ] For this project, submit the link to your vercel hosted website.
