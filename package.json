@@ -28,7 +28,6 @@
     "msw": "0.35.0",
     "nodemon": "2.0.14",
     "webpack": "5.62.1",
-    "webpack-cli": "^4.9.1",
     "webpack-dev-server": "4.4.0"
   },
   "dependencies": {
@@ -48,6 +47,7 @@
     "redux": "^4.1.2",
     "sass": "^1.32.8",
     "style-loader": "^3.3.1",
-    "styled-components": "5.3.3"
+    "styled-components": "5.3.3",
+    "webpack-cli": "^4.9.1"
   }
 }
