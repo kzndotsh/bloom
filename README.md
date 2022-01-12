@@ -35,4 +35,4 @@ Do not **move or rename any files** in this project. The website's source files 
 
 ## Submission Format
 
-* [ ] Submit a pull request to merge `<firstName-lastName>` Branch into `main`.
+* [ ] Paste a link to your repo into the appropriate canvas input.
