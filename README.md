@@ -4,7 +4,7 @@ This project allows you to practice the concepts and techniques learned in this 
 
 ## Introduction
 
-This is the chance to let your skills shine! You have learned _sooo_ much the last month, and now you get to put all of your hard-earned skills to work. Choose an open api ([this list](https://github.com/public-apis/public-apis)). Protip - don't take too long choosing an API. Pick one that looks interesting, and get building.
+This is the chance to let your skills shine! You have learned _sooo_ much the last month, and now you get to put all of your hard-earned skills to work. Choose an open api ([this list](https://apipheny.io/free-api/)). Protip - don't take too long choosing an API. Pick one that looks interesting, and get building.
 
 Once you have chosen an API to consume, build an app that makes sense for the data you will be retrieving. Have fun with this. You get to be the creative mind. You get to make all the decisions here. I'm excited to see what you build!
 
