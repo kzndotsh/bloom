@@ -69,6 +69,6 @@ api.delete('/api/articles/:id', authenticator, (req, res) => {
   res.json(Articles.remove(req.params.id))
 })
 
-api.listen(5000, () => {
-  console.log('listening on 5000')
+api.listen(9000, () => {
+  console.log('listening on 9000')
 })
