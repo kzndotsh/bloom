@@ -21,19 +21,19 @@ In this challenge you will create a login page and request a token from the serv
 In this project, you will demonstrate your mastery of these skills by creating **a login page** and **basic CRUD application.** You will implement basic security using **token authentication** and build private routes within the application.
 
 ### API Documentation
-* **[POST]** * to `http://localhost:5000/api/login`: returns a the current authenication information of the user. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda', password: 'School' }` for a successful login.
+* **[POST]** * to `http://localhost:9000/api/login`: returns a the current authenication information of the user. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda', password: 'School' }` for a successful login.
 
-* **[POST]** * to `http://localhost:5000/api/logout`: returns the expired authentication information of the user.
+* **[POST]** * to `http://localhost:9000/api/logout`: returns the expired authentication information of the user.
 
-* **[GET]** to `http://localhost:5000/api/articles`: returns the all articles currently available. **This endpoint can only be accessed by an authenticated user.**
+* **[GET]** to `http://localhost:9000/api/articles`: returns the all articles currently available. **This endpoint can only be accessed by an authenticated user.**
 
-* **[GET]** to `http://localhost:5000/api/articles/:id`: returns a single article with the id. **This endpoint can only be accessed by an authenticated user.**
+* **[GET]** to `http://localhost:9000/api/articles/:id`: returns a single article with the id. **This endpoint can only be accessed by an authenticated user.**
 
-* **[POST]** to `http://localhost:5000/api/articles`: creates a article object. Returns all available articles. Pass the article as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
+* **[POST]** to `http://localhost:9000/api/articles`: creates a article object. Returns all available articles. Pass the article as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
 
-* **[PUT]** to `http://localhost:5000/api/articles/:id`: updates the article using the `id` passed as part of the URL. Returns all available articles. Send the updated article object as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
+* **[PUT]** to `http://localhost:9000/api/articles/:id`: updates the article using the `id` passed as part of the URL. Returns all available articles. Send the updated article object as the `body` of the request. **This endpoint can only be accessed by an authenticated user.**
 
-* **[DELETE]** to `http://localhost:5000/api/articles/:id`: removes the article with the `id` referenced. Returns all available articles. **This endpoint can only be accessed by an authenticated user.**
+* **[DELETE]** to `http://localhost:9000/api/articles/:id`: removes the article with the `id` referenced. Returns all available articles. **This endpoint can only be accessed by an authenticated user.**
 
 #### Article Data Structure
 ```
