@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Titillium Web';
+  src: url('../fonts/TitilliumWeb-SemiBold.ttf');
+}
+
+body::after {
+  content: "";
+  background: url('../images/Light-Gradient.jpeg');
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+body, input, button {
+  font-family: 'Titillium Web', sans-serif;
+  color: #484848;
+}
+
+#root, #wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3 {
+  color: #93005a;
+
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  line-height: 3rem;
+}
+
+h3 {
+  font-size: 0.75rem;
+  line-height: 2rem;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a {
+  font-size: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: #484848;
+}
+
+nav a.active {
+  color: #ff4b00;
+}
+
+#error {
+  color: red;
+  margin: 1rem 0 1rem 0;
+}
+
+#todos {
+  margin: 0 0 1rem 0;
+}
+
+ul, form {
+  margin: 1rem 0 1rem 0;
+}
+
+.todo {
+  padding: 0.15rem;
+}
+
+.todo:hover {
+  cursor: pointer;
+}

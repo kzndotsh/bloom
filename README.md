@@ -1,73 +1,83 @@
-# Component Lifecycle Methods - React Github User Card
+# Component Lifecycle - React Todo AJAX
 
-This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored lifecycle methods in class components. In your project you will demonstrate proficiency of these concepts by recreating the Github User bCard project, but as a React application this time.
-
+This module explored lifecycle methods in class components. In your project you will demonstrate proficiency of these concepts by building a todo app that can interact with an API to GET, POST and PATCH todos.
 
 ## Objectives
-- Build class components from scratch from a Storyboard
-- Get comfortable creating multiple slices of state
-- Use ComponentDidMount to make an API call
-- Use ComponentDidUpdate to make an API call
+
+- Build class components from scratch
+- Get comfortable working with multiple slices of state
+- Use `ComponentDidMount` to make an API call to `GET` resources from an API
+- Use a submit event handler to `POST` a new resource to the server
+- Use a click handler to `PATCH` an existing resource on the server
+- Update the frontend to keep it in sync with the state of the server
+- Use frontend filtering to display only some resources
 
 ## Introduction
-In this project you will build an application that allows for github user and follower information to be retrieved and displayed within custom made DOM. You application should do the following:
-- Hold both the current user, user and follower state within the App.js component.
-- Load the current user state into the user state on mount.
-- Load the current user's followers into state when the current user state is updated.
-- Load the the user and follower information of the username typed into a form when submitted.
 
-<!-- ![Project Example](project-goals.gif) -->
+In this project you will build an application that allows for todos to be added, completed and removed from view. This application should:
 
-***Make sure to complete your tasks one at a time and complete test each task before proceding forward.***
+- Use [this gif](./todo.gif) as inspiration for building the DOM
+- Try out [this prototype](https://advanced-react-todos-ajax.herokuapp.com/)
+- Hold all todos in state within the `App.js` component
+- Allow for a todo's `completed` status to be toggled back and forth when clicking on a todo
+- Allow for a todo to be added when submitting the new todo form
+- Allow for completed todos to be filtered out of view when clicking the clear completed button
 
-## Instructions
-### Task 1: Project Set Up
-* [ ] Create a forked copy of this project.
-* [ ] Clone your OWN version of the repository in your terminal
-* [ ] cd into the project base directory `cd web-module-project-lifecycle`
-* [ ] Download project dependencies by running `npm install`
-* [ ] Start up the app using `npm start`
+## Tools
 
-### Task 2: Project Requirements
-#### Build your DOM
-> *Creating the DOM for your application base on your template and data*
-* [ ] Take a look at the [included mockup](./card_mockup.png).
-* [ ] Use your browser to take a look at the data returned when using the following endpoints: https://api.github.com/users/<Your github name> and https://api.github.com/users/<Your github name>/followers
-* [ ] Using these three pieces of information, build the DOM necessary to display all application information.
-* [ ] Make use of the User.js (for holding all user information), FollowerList.js (for map through a followers list) and Follower.js (for displaying an individual follower) components to efficiently distribute your code. ***All components should be class based for this assignment.***
-* [ ] Feel free to leave the search form within App.js.
-* [ ] Lightly style as needed.
-* [ ] Commit all changes before proceeding.
+- Node 16.x
+- NPM 8.x (update NPM executing `npm i -g npm`)
+- Postman (download the desktop version [here](https://www.postman.com/downloads/))
+- Chrome >= 96.x
 
-#### Add in your state
-> *Now that we have all the DOM necessary to run our application, let's proceed to building in our state*
-* [ ] In App.js, add in state. Include a slice for state for:
-    - A string defining the user we are currently searching for
-    - An object containing all user information
-    - The array of all followers
-* [ ] Using our two github endpoints as a base, add your github user name, as well as test data for the user object and followers array to insure it is connected correctly.
-* [ ] Connect make sure that the test data within state correct displays within your User, FollowerList and Follower components.
+Other browser/Node/NPM configurations might work but haven't been tested.
 
-#### Load in the user and follower on mount
-> *We can now do our api calls to get our initial data*
-* [ ] Make our user object and follower list state empty by default.
-* [ ] Keep our searched user state your github username by default.
-* [ ] Use componentDidMount to load initial user data for your github name into state.
-* [ ] Use componentDidUpdate to load follower information ***only when the user slice of state changes value. Make be careful to avoid infinite loops while building this portion.***
+## Project Set Up
 
-#### Build search capabilities within your APP
-> *Now let's allow users to search for new github usernames*
-* [ ] Connect your form in App.js so that typing into a input updated your current user state.
-* [ ] When your form is submitted, make an api call on current user. Set the returned user data to state.
-* [ ] Ensure that followers is correctly updated.
+- Fork, clone, and `npm install`.
+- Launch the project on a development server executing `npm run dev`.
+- Visit your app by navigating to `http://localhost:3000` with Chrome.
 
-### Task 3: Stretch goals
-- [ ] We are making several api calls of the same type in our code. How can we make this portion more dry?
-- [ ] Add in functionality so that when a follower is clicked, they will become the searched user. Have the UI update approprately.
-- [ ] Push your styling! Have fun!
+## Project Instructions
+
+### API Endpoints
+
+The following endpoints exist in this project and should be explored with Postman prior to coding:
+
+- `GET http://localhost:9000/api/todos`
+  1. Expects no payload
+  2. Makes no changes on the server
+  3. responds with `200 OK` and a payload with all the todos
+- `POST http://localhost:9000/api/todos`
+  1. Expects a payload with `name` (string) and optional `completed` (boolean)
+  2. Creates a new todo on the server
+  3. responds with `201 Created` and a payload with the new todo
+- `PATCH http://localhost:9000/api/todos/:id`
+  1. Expects no payload
+  2. Flips the `completed` property on the todo with the id provided in the URL
+  3. Responds with `200 OK` and the updated todo
+
+The API will make other responses if the requests are defective:
+
+- `422 Unprocessable Entity` when a required payload is missing or incorrect
+- `404 Not Found` when the requested todo does not exist, or when the URL is incorrect
+
+### React Components
+
+Build all components as class components. Find them inside `frontend/components`. Don't focus on styling. We want you to worry about function over form today. Your React application must consume the endpoints above to achieve the following functionality:
+
+- Your app should display a list of todos, an input field, a submit button, and a button to filter out completed todos
+- `<App />` will hold all of the state machinery:
+  - Application state, held in component state
+  - State-changing methods, event handlers
+- `<TodoList />` receives your todos array and iterates over the list generating a new `<Todo />` for each element in the array
+- `<Todo />` is a component that takes in the `todo` data and displays the task to the screen
+- `<Form />` will hold your input field and your `Add Todo` and `Clear Completed` buttons
+  - Your input field should take in user input, and allow a user to press `Enter` or click on the `Submit Button` to add a todo to your list
+  - Once a todo is submitted, the Todo List should re-render and show the added todo
 
 ## Submission Format
-- [ ] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
-- [ ] Connect your fork to Codegrade using the "Connect Git" button.
-- [ ] Find your newly created fork from the list and push your work to main.
-- [ ] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ
+
+- Only work on main.
+- Avoid committing broken code, but commit as often as possible
+- Refer to Canvas for additional submission instructions

@@ -1,9 +1,8 @@
 {
   "env": {
-    "commonjs": true,
+    "browser": true,
     "es2021": true,
     "node": true,
-    "browser": true,
     "jest": true
   },
   "extends": [
@@ -11,8 +10,16 @@
     "plugin:react/recommended"
   ],
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/prop-types": 0
+  }
 }
