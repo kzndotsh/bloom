@@ -80,6 +80,7 @@ You must also also test the Spinner component in this module:
 
 - Find specific instructions inside each of the modules above.
 - Most components include a prop-types declaration at the bottom, to explain what props, and of what data types, they expect.
+- Prop types declarations cause warnings in the console, to let know that props are missing or are of the wrong type.
 - Try to get the functionality as close as possible to that of the prototype.
 
 ## MVP Short Explanation
