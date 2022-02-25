@@ -51,5 +51,5 @@ Articles.propTypes = {
   getArticles: PT.func.isRequired,
   deleteArticle: PT.func.isRequired,
   setCurrentArticleId: PT.func.isRequired,
-  currentArticleId: PT.number, // can be undefined
+  currentArticleId: PT.number, // can be undefined or null
 }
