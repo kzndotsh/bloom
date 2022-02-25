@@ -21,7 +21,7 @@ In this challenge, you will write the logic for [THIS APP](https://advanced-apps
 
 ## Studying the prototype
 
-Open the live prototype linked above and study its functionality using the following **Chrome Dev Tools**:
+❗ Open the live prototype linked above and study its functionality using the following **Chrome Dev Tools**:
 
 - **Elements tab** shows the exact DOM rendered as we interact with the UI. Look at texts but also at ids and class names.
 - **Network tab** shows the HTTP messages. "Payload" shows the request payload from the client (if any) and "Preview" shows the payload in the server response.
