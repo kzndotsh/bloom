@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { NavLink, Routes, Route, useNavigate } from 'react-router-dom'
 import Articles from './Articles'
 import LoginForm from './LoginForm'
-import axios from '../axios'
 import Message from './Message'
 import ArticleForm from './ArticleForm'
 import Spinner from './Spinner'
@@ -11,14 +10,16 @@ const articlesUrl = 'http://localhost:9000/api/articles'
 const loginUrl = 'http://localhost:9000/api/login'
 
 export default function App() {
+  // ✨ MVP can be achieved with these states
   const [message, setMessage] = useState('')
   const [articles, setArticles] = useState([])
   const [currentArticleId, setCurrentArticleId] = useState()
   const [spinnerOn, setSpinnerOn] = useState(false)
 
+  // ✨ Research `useNavigate` in React Router v.6
   const navigate = useNavigate()
-  const redirectToLogin = () => navigate('/', { replace: true }) // ✨ implement
-  const redirectToArticles = () => navigate('/articles') // ✨ implement
+  const redirectToLogin = () => { /* ✨ implement */ }
+  const redirectToArticles = () => { /* ✨ implement */ }
 
   const logout = () => {
     // ✨ implement
@@ -65,7 +66,7 @@ export default function App() {
   }
 
   return (
-    // ✨ fix the JSX: `Spinner`, `Message`, `LoginForm`, `ArticleForm` and `Articles` need their props!
+    // ✨ fix the JSX: `Spinner`, `Message`, `LoginForm`, `ArticleForm` and `Articles` expect props ❗
     <React.StrictMode>
       <Spinner />
       <Message />
