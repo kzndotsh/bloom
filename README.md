@@ -26,10 +26,6 @@ Open the live prototype linked above and study its functionality using the follo
 - **Network tab** shows the HTTP messages. "Payload" shows the request payload from the client (if any) and "Preview" shows the payload in the server response.
 - **Components tab** shows application state and the props each component gets passed (although the names of the components are minified during deployment).
 
-### Important notes from "Product"
-
-- The structure of the DOM must match that of the prototype
-
 ## Studying the API
 
 The endpoints needed for this project are the following:
@@ -78,10 +74,11 @@ You must also also test the Spinner component in this module:
 
 ### Notes
 
-- Find specific instructions inside each of the modules above.
-- Most components include a prop-types declaration at the bottom, to explain what props, and of what data types, they expect.
-- Prop types declarations cause warnings in the console, to let know that props are missing or are of the wrong type.
-- Try to get the functionality as close as possible to that of the prototype.
+- Find specific instructions and hints inside each of the modules linked above.
+- The structure of the DOM must match that of the prototype: take care not to remove existing classnames, ids, etc.
+- Most components include a prop-types declaration at the bottom, to explain what props -and of what data types- they expect.
+- Unmet prop-types expectations will cause warnings in the console, to advise that props are missing, or of the wrong type of data.
+- Try to get the functionality of the app as close as possible to that of the prototype. Not all of it is covered by auto tests.
 
 ## MVP Short Explanation
 
