@@ -1,6 +1,6 @@
 {
   "name": "unit1-sprint3-intro-html",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "index.js",
   "dependencies": {
     "@babel/core": "^7.17.8",
