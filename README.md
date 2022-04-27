@@ -7,7 +7,7 @@ In this challenge, you will write the logic for [THIS APP](https://advanced-apps
 - Node 16.x
 - NPM 8.x (update NPM executing `npm i -g npm`)
 - Unix-like shell (Gitbash/bash/zsh)
-- Chrome >= 98.x
+- Chrome >= 99.x
 
 ❗ Other configurations might work but haven't been tested.
 
