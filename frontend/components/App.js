@@ -67,7 +67,7 @@ export default function App() {
 
   return (
     // ✨ fix the JSX: `Spinner`, `Message`, `LoginForm`, `ArticleForm` and `Articles` expect props ❗
-    <React.StrictMode>
+    <>
       <Spinner />
       <Message />
       <button id="logout" onClick={logout}>Logout from app</button>
@@ -88,6 +88,6 @@ export default function App() {
         </Routes>
         <footer>Bloom Institute of Technology 2022</footer>
       </div>
-    </React.StrictMode>
+    </>
   )
 }
