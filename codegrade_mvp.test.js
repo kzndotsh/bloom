@@ -19,7 +19,7 @@ afterEach(() => {
 
 test('App is a class-based component', async () => {
   render(<App />)
-  await screen.findByText('laundry')
+  await screen.findByText('laundry', { exact: false })
   expect(
     App.prototype &&
     App.prototype.isReactComponent
