@@ -55,7 +55,8 @@ describe('Advanced Applications', () => {
   describe('Login', () => {
     test(`[1] Submit credentials button is disabled until
         - username (after trimming) is at least 3 chars AND
-        - password (after trimming) is at least 8 chars`, () => {
+        - password (after trimming) is at least 8 chars
+        - Review how to conditionally disable a button element.`, () => {
       expect(loginBtn()).toBeDisabled()
       fireEvent.change(usernameInput(), { target: { value: ' 12 ' } })
       fireEvent.change(passwordInput(), { target: { value: ' 1234567 ' } })
@@ -66,14 +67,16 @@ describe('Advanced Applications', () => {
     })
     test(`[2] Attempting to navigate to Articles
         - renders a redirect back to login screen
-        - articles form never loads`, () => {
+        - articles form never 
+        - Review how to implement protected routes using an authentication token and redirect users.`, () => {
       fireEvent.click(articlesLink())
       expect(titleInput()).not.toBeInTheDocument()
       expect(usernameInput()).toBeInTheDocument()
     })
     test(`[3] Filling out the login form and submitting
         - article titles, texts, topics render on the page
-        - success message renders on the page`, async () => {
+        - success message renders on the page
+        - Review how to handle authentication with tokens in a React app (using local storage) and how to render data from state.`, async () => {
       // login flow
       fireEvent.change(usernameInput(), { target: { value: 'Foo' } })
       fireEvent.change(passwordInput(), { target: { value: '12345678' } })
@@ -112,7 +115,8 @@ describe('Advanced Applications', () => {
     test(`[4] Clicking the logout button
         - redirection to the login screen
         - the "token" key is removed from local storage
-        - a success message renders on the page`, async () => {
+        - a success message renders on the page
+        -  Review how to handle authentication with tokens in a React app (using local storage) and redirect the user.`, async () => {
       await loginFlow()
       // token set sanity check
       expect(token()).toBeTruthy()
@@ -128,7 +132,7 @@ describe('Advanced Applications', () => {
     })
   })
   describe('Posting a new article', () => {
-    test(`[5] Submit button is disabled on page load`, async () => {
+    test(`[5] Submit button is disabled on page load, Review how to conditionally disable a button element.`, async () => {
       await loginFlow()
       expect(submitArticleBtn()).toBeDisabled()
     })
@@ -158,7 +162,7 @@ describe('Advanced Applications', () => {
     })
   })
   describe('Editing an existing article', () => {
-    test('[7] Clicking edit button populates the article information into the form', async () => {
+    test('[7] Clicking edit button populates the article information into the form, Review how to manipulate and use state and reset a form using initial values.', async () => {
       await loginFlow()
       // entering edit mode
       fireEvent.click(screen.getAllByText('Edit')[0])
@@ -169,7 +173,9 @@ describe('Advanced Applications', () => {
     test(`[8] Editing the form values and submitting
         - updates the edited article on the page
         - resets the form
-        - a success message renders on the page`, async () => {
+        - a success message renders on the page
+        - Review how to utilize state to set current values.
+        -  Review how to make PUT requests to an external API using Axios and how to manipulate and use state.`, async () => {
       await loginFlow()
       // entering edit mode
       fireEvent.click(screen.getAllByText('Edit')[0])
@@ -194,7 +200,8 @@ describe('Advanced Applications', () => {
   describe('Deleting an existing article', () => {
     test(`[9] Clicking delete button on an article
         - removes it from the page
-        - a success message renders on the page`, async () => {
+        - a success message renders on the page
+        - Review how to make DELETE requests to an external API using Axios.`, async () => {
       await loginFlow()
       // hitting delete
       fireEvent.click(screen.getAllByText('Delete')[0])
