@@ -1,16 +1,15 @@
-# Component Lifecycle - React Todo AJAX
+# Component Lifecycle - React Todo Full-Stack
 
-This module explored lifecycle methods in class components. In your project you will demonstrate proficiency of these concepts by building a todo app that can interact with an API to GET, POST and PATCH todos.
+This module explored lifecycle methods in class components. In your project you will demonstrate proficiency of these concepts by building a todo app that can interact with an API to read, create and edit todos.
 
-## Objectives
+## Skills You Will Practice
 
-- Build class components from scratch
-- Get comfortable working with multiple slices of state
-- Use `ComponentDidMount` to make an API call to `GET` resources from an API
-- Use a submit event handler to `POST` a new resource to the server
-- Use a click handler to `PATCH` an existing resource on the server
-- Update the frontend to keep it in sync with the state of the server
-- Use frontend filtering to display only some resources
+- Building class components from scratch
+- Using `ComponentDidMount` to trigger a request to the server after the first render
+- Using a submit event handler to create (`POST`) a new resource to the server
+- Using a click handler to edit (`PATCH`) an existing resource on the server
+- Updating the frontend to keep it in sync with the state of the server
+- Filtering out completed todos
 
 ## Introduction
 
