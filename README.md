@@ -9,7 +9,7 @@ This module explored lifecycle methods in class components. In your project you 
 - Using a submit event handler to create (`POST`) a new resource to the server
 - Using a click handler to edit (`PATCH`) an existing resource on the server
 - Updating the frontend to keep it in sync with the state of the server
-- Filtering out completed todos
+- Filtering out of view the completed todos
 
 ## Introduction
 
