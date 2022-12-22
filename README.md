@@ -22,7 +22,7 @@ a<br />
 section<br />
 address
 
-Once you've completed the basic structure with HTML, you'll need to add some more style! Much of the stylesheet has already been completed, but there are comments where you'll need to fill in the blanks. Use MDN and other resources to look up specific style properties and selectors.
+Once you've completed the basic structure with HTML, you'll need to add some more style! Much of the stylesheet has already been completed, but there are comments where you'll need to fill in the blanks. Use MDN and other resources to look up specific style properties and selectors.  Be sure to look over the index.css and index.html files as there are additional instructions and provided css classes for you to use.
 
 ## Project Set Up
 
