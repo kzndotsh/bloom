@@ -101,10 +101,10 @@ console.log(baby);
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. global binding, this will always fall back to the global object/window
+  2. implicit binding, this will always fall to what object is left of the dot!
+  3. new binding, this will always refer to instance created by the constructor function
+  4. explicit binding, this is when we use call or apply and override 
 */
 
 ///////// END OF CHALLENGE /////////
