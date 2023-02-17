@@ -26,13 +26,39 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+.map: this allows us to do something to each index of an array, most importantly it also creates a new array. When using map however, you must be aware that every element in the array will be operated on. It's all or nothing. Using map would be handy with dealing with large sets of data such as mathmatics or even lists of data such as those related to email marketing.
+
+.reduce: this allows us to take an array and return a single value back from it. This is quite useful in financial applications or possibly statistics, geography and more. Using reduce could easily be combined with other mathmatic operations such as finding averages, ranges, etc.
+
+.filter: this allows us to filter and return out data based on logicl requirements such as if something is less than or greater than xyz. This can be used for many different things and oftentimes can reduce code where otherwise chained if else statements may be needed or possibly a for loop.
+
 2. Explain the difference between a callback and a higher order function.
+
+A callback function is a function passed into another function as an argument. Example:
+function add(a, b) {
+    return a + b;
+}
+
+A higher order function is the function that takes the callback function as a parameter. Example:
+function master(a, b, cb) {
+    return cb(a, b);
+}
 
 3. Explain what a closure is.
 
+Closure gives you access to an outer function's scope from an inner function, typically to gain access to variables.
+
 4. Describe the four principles of the 'this' keyword.
 
+Principle 1. global binding, this will always fall back to the global object/window
+Principle 2. implicit binding, this will always fall to what object is left of the dot!
+Principle 3. new binding, this will always refer to instance created by the constructor function
+Principle 4. explicit binding, this is when we use call or apply and override 
+
 5. Why do we need super() in an extended class?
+
+We use super() in an extended class to access properties of a classes prototype.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
