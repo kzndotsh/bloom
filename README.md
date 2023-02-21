@@ -14,7 +14,7 @@
 **NOTE:** this project will have **two** servers running, so read these instructions carefully:
 
 * [ ] **Fork** this repository, then clone your fork.
-* [ ] Execute `npm install` to download dependencies.
+* [ ] Execute `npm install` to download dependencies. The `react-router-dom` library is already installed.
 * [ ] Execute `npm run api` to run the first server, which provides your app with Movie data.
 * [ ] **In a separate terminal**, execute `npm start` to run the second server, which launches the React app in Chrome.
 
