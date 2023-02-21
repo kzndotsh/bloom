@@ -1,4 +1,4 @@
-# Client Side Routing w/ React Router v.5
+# Client Side Routing w/ React Router
 
 Topics:
 
