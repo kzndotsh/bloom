@@ -1,24 +1,24 @@
 # Client Side Routing w/ React Router
 
-Topics:
+## Topics
 
 * React Router
-* Using Link and NavLink to navigate to specific routes
-* Passing Route Parameters
+* Navigating to specific routes
+* Consuming URL Parameters
 * Passing props to components rendered by the Router
 
 ## Instructions
 
 ### Task 1: Project Set-up
 
-* [ ] **Fork** this repository, then clone your fork.
-* [ ] **NOTE** You have 2 servers that you will be running here so read these instructions carefully.
-* [ ] **In the root of this directory**: Run `npm install` to download dependencies.
-* [ ] Run the server using `npm start` or `node server.js`. (Don't worry too much about this process, you'll get used to doing this and it will be explained more in the future).
-* [ ] In a separate terminal cd into the `client` folder and run `npm install` to download dependencies.
-* [ ] Still inside the `client` folder run `npm start` to run the client application.
+**NOTE:** this project will have **two** servers running, so read these instructions carefully:
 
-* [ ] Once your application is up and running on the client, you should see a browser window that looks like [this](https://tk-assets.lambdaschool.com/c6b3e8d8-afe0-4663-82da-60b1de76f649_movies-home.png) at `localhost:3000` (although the port number will be different if 3000 is being used).
+* [ ] **Fork** this repository, then clone your fork.
+* [ ] Execute `npm install` to download dependencies.
+* [ ] Execute `npm run api` to run the first server, which provides your app with Movie data.
+* [ ] **In a separate terminal**, execute `npm start` to run the second server, which launches the React app in Chrome.
+
+* [ ] Once your application is up and running on the client, you should see a browser window that looks like [this](https://tk-assets.lambdaschool.com/c6b3e8d8-afe0-4663-82da-60b1de76f649_movies-home.png) at `localhost:3000` (although the port number will be different if 3000 is already being used).
 
 ### Task 2: MVP
 
@@ -31,10 +31,10 @@ Once you are done your application will have two routes:
 
 #### Set up Routes
 
-* [ ] Wrap your app with the router.
+* [ ] Wrap the `App` component with `BrowserRouter` in `index.js`.
 * [ ] Inside your App file add two routes.
   * [ ] one route for `/` that loads the `MovieList` component. This component will need the movies injected into it via props.
-  * [ ] one route that will take an `id` parameter after`/movies/` (ex: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
+  * [ ] one route that will take an `id` parameter after`/movies/` (EG: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
 
 #### Add Functionality
 
@@ -63,7 +63,7 @@ If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
 
 #### Turn your Saved Movie `Link`s into `NavLink`s
 
-* [ ] Navlink
+* [ ] NavLink
 
 ## Submission Format
 
