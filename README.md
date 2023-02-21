@@ -28,7 +28,7 @@ Once you are done your application will have two routes:
 
 #### Set up Routes
 
-* [ ] Wrap the `App` component with `BrowserRouter` in `index.js`.
+* [ ] Wrap the `App` component with `BrowserRouter` in `src/index.js`.
 * [ ] Inside your App file add two routes.
   * [ ] one route for `/` that loads the `MovieList` component. This component will need the movies injected into it via props.
   * [ ] one route that will take an `id` parameter after`/movies/` (EG: `/movies/2`, `/movies/3` where the id is dynamic). This route should load the `Movie` component.
