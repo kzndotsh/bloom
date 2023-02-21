@@ -11,14 +11,11 @@
 
 ### Task 1: Project Set-up
 
-**NOTE:** this project will have **two** servers running, so read these instructions carefully:
-
 * [ ] **Fork** this repository, then clone your fork.
-* [ ] Execute `npm install` to download dependencies. The `react-router-dom` library is already installed.
-* [ ] Execute `npm run api` to run the first server, which provides your app with Movie data.
-* [ ] **In a separate terminal**, execute `npm start` to run the second server, which launches the React app in Chrome.
+* [ ] Execute `npm install` to download dependencies. The `react-router-dom` library is already installed!
+* [ ] Execute `npm run start` to launch your Movies application in Chrome.
 
-* [ ] Once your application is up and running on the client, you should see a browser window that looks like [this](https://tk-assets.lambdaschool.com/c6b3e8d8-afe0-4663-82da-60b1de76f649_movies-home.png) at `localhost:3000` (although the port number will be different if 3000 is already being used).
+**Once your application is up and running**, you should see a browser window that looks like [this](https://tk-assets.lambdaschool.com/c6b3e8d8-afe0-4663-82da-60b1de76f649_movies-home.png) at `http://localhost:3000`.
 
 ### Task 2: MVP
 
