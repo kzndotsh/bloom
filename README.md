@@ -76,7 +76,7 @@ Review the provided design file for the home page.
 * [ ] Build the rest of the home page layout to match the design. Much of it has already been implemented; you should only need to fix the header, footer, and gallery portions.
 ​
 Colors and fonts:
-Light text: rgb(225, 239, 230);
+Light text: rgb(225, 239, 230); X
 Dark background: rgb(0, 4, 17);
 Dark transparency: background-color: rgb(0, 4, 17, .8);
 ​
