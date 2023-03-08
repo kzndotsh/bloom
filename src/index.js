@@ -40,3 +40,74 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 };
 
 console.log('project wired!')
+
+function links () {
+  const links = document.querySelectorAll('nav a');
+  const linksArr = Array.from(links);
+  const newLinks = Object.values(siteContent.nav);
+  for(let i = 0; i < linksArr.length; i++) {
+    linksArr[i].textContent = newLinks[i];
+    linksArr[i].classList.add('italic');
+  }
+}
+links();
+
+function logo () {
+  const logo = document.querySelector('#logo-img');
+  logo.src = siteContent.images["logo-img"];
+}
+logo();
+
+function cta () {
+  const h1 = document.querySelector('.cta h1');
+  h1.textContent = siteContent.cta["h1"];
+  const button = document.querySelector('.cta button');
+  button.textContent = siteContent.cta["button"];
+  const img = document.querySelector('.cta img');
+  img.src = siteContent.images["cta-img"];
+}
+cta();
+
+function mainContent () {
+  const mainContentHeadings = Object.keys(siteContent["main-content"]).
+    filter((key) => key.includes('h4')).
+    reduce((cur, key) => { return Object.assign(cur, { [key]: siteContent["main-content"][key] }); }, {});
+  const mainContentText = Object.keys(siteContent["main-content"]).
+    filter((key) => key.includes('content')).
+    reduce((cur, key) => { return Object.assign(cur, { [key]: siteContent["main-content"][key] }); }, {});
+  
+  const item = document.querySelectorAll('.text-content');
+  const itemArr = Array.from(item);
+  for(let i = 0; i < itemArr.length; i++) {
+    const h4 = itemArr[i].querySelector('h4');
+    h4.textContent = Object.values(mainContentHeadings)[i];
+    const p = itemArr[i].querySelector('p');
+    p.textContent = Object.values(mainContentText)[i];
+  }
+}
+mainContent();
+
+function middleImg () {
+  const img = document.querySelector('.middle-img');
+  img.src = siteContent.images["accent-img"];
+}
+middleImg();
+
+function contact () {
+  const h4 = document.querySelector('.contact h4');
+  h4.textContent = siteContent.contact["contact-h4"];
+  const address = document.querySelector('.contact p:nth-of-type(1)');
+  address.textContent = siteContent.contact["address"];
+  const phone = document.querySelector('.contact p:nth-of-type(2)');
+  phone.textContent = siteContent.contact["phone"];
+  const email = document.querySelector('.contact p:nth-of-type(3)');
+  email.textContent = siteContent.contact["email"];
+}
+contact();
+
+function copyright () {
+  const copyright = document.querySelector('footer a');
+  copyright.textContent = siteContent.footer["copyright"];
+  copyright.classList.add('bold');
+}
+copyright();
