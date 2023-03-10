@@ -81,6 +81,8 @@ window.onscrollend = (event) => {
     alert('you stopped scrolling!');
 };
 
+// on window resize, report the size
+
 const heightOutput = document.querySelector("#height");
 const widthOutput = document.querySelector("#width");
 
@@ -90,3 +92,9 @@ function reportWindowSize() {
 }
 
 window.onresize = reportWindowSize;
+
+// alert on copy
+
+window.addEventListener("copy", (event) => {
+    alert('hey, what are you trying to copy?');
+});
