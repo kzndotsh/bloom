@@ -61,3 +61,32 @@ function escKey(event) {
     }
 }
 document.addEventListener("keydown", escKey);
+
+// alert when page is loaded
+
+window.addEventListener("load", (event) => {
+    alert('the page has fully loaded!');
+});
+
+// prevent user from leaving instantly
+
+window.addEventListener('beforeunload', (event) => {
+    event.preventDefault();
+    event.returnValue = '';
+});
+
+// alert user every time they stop scrolling
+
+window.onscrollend = (event) => {
+    alert('you stopped scrolling!');
+};
+
+const heightOutput = document.querySelector("#height");
+const widthOutput = document.querySelector("#width");
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+  widthOutput.textContent = window.innerWidth;
+}
+
+window.onresize = reportWindowSize;
