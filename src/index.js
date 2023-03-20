@@ -9,14 +9,13 @@ import Squares from './components/Squares';
 import Programmers from './components/Programmers';
 
 render(
-  <>
-    <Counter />
-    <Moods />
-    <Spinner />
-    <Input />
-    <Squares />
-    <Programmers />
-  </>
-  ,
-  document.querySelector('#root')
+    <>
+        <Counter />
+        <Moods />
+        <Spinner />
+        <Input />
+        <Squares />
+        <Programmers />
+    </>,
+    document.querySelector('#root')
 );
