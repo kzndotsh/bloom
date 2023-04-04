@@ -1,18 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Header from './components/Header';
+import Search from './components/Search';
+import Character from './components/Character';
+import Characters from './components/Characters';
+import styled from 'styled-components';
 
 const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+  const [characters, setCharacters] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  // Fetch characters from the API in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
+  useEffect(() => {
+    axios
+      .get('https://swapi.dev/api/people/')
+      .then((res) => {
+        // console.log(res);
+        setCharacters(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  const getFilteredSearch = () => {
+    const termNormalized = searchTerm.trim().toLowerCase();
+    if (!termNormalized) return characters;
+    return characters.filter((character) => {
+      return character.name.toLowerCase().includes(termNormalized);
+    });
+  };
+
+  const StyledList = styled.div`
+    background-color: #333;
+  `;
 
   return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
+    <div className='App'>
+      <Header />
+      <Search setSearchTerm={setSearchTerm} />
+      <Characters characters={getFilteredSearch()} />
     </div>
   );
-}
+};
 
 export default App;

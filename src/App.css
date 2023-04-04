@@ -1,8 +1,49 @@
 .App {
   text-align: center;
 }
-.Header {
-  color: #443e3e;
-  text-shadow: 1px 1px 5px #fff;
-}
+
 /* write your parent styles in here for your App.js */
+
+.sub-header {
+  color: #fff;
+}
+
+h3 {
+  color: white;
+}
+
+.header-container {
+  background-color: #443e3e;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-logo {
+  height: 100px;
+}
+.header-title {
+  color: yellow;
+}
+
+.character-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.character-details p {
+  color: #fff;
+}
+
+.search-bar {
+  width: 30%;
+  height: 30px;
+  background-color: #443e3e;
+  color: #fff;
+  border-radius: 10px;
+  margin: 1%;
+  padding: 1%;
+  font-size: 1.2rem;
+}
