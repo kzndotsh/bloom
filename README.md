@@ -62,4 +62,4 @@ The following are stretch goals that you should attempt _after_ you meet MVP for
 
 ## Submission Format
 
-* [ ] Submit a link to your github repository in canvas.
+- [ ] Submit a link to your github repository in canvas.
