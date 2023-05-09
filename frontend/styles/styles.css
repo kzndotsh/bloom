@@ -83,3 +83,7 @@ ul, form {
 .todo:hover {
   cursor: pointer;
 }
+
+.completed p::after {
+  content: " ✅";
+}
