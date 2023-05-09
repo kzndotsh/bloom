@@ -6,6 +6,8 @@ This project allows you to practice the concepts and techniques learned in this 
 
 This is the chance to let your skills shine! You have learned _sooo_ much the last month, and now you get to put all of your hard-earned skills to work. Choose an open api ([this list](https://apipheny.io/free-api/)). Protip - don't take too long choosing an API. Pick one that looks interesting, and get building.
 
+❗ **IMPORTANT NOTE:** If your chosen API requires you to use an **API key**, make sure not to hard-code it in your source nor push it to GitHub, for security reasons. Create a separate module that exports the API key, and then make sure to add that module to your .gitignore file.
+
 Once you have chosen an API to consume, build an app that makes sense for the data you will be retrieving. Have fun with this. You get to be the creative mind. You get to make all the decisions here. I'm excited to see what you build!
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this project.**
