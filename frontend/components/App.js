@@ -8,7 +8,7 @@ const URL = 'http://localhost:9000/api/todos';
 const getTodos = () => {
   console.log('getTodos function ran');
   return (
-
+    axios
       .get(`${URL}`)
       .then((res) => res)
       // .then((res) => console.log(res))
