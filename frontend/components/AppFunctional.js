@@ -1,78 +1,158 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-// Suggested initial states
-const initialMessage = ''
-const initialEmail = ''
-const initialSteps = 0
-const initialIndex = 4 // the index the "B" is at
+const initialMessage = 'Coordinates (2, 2)';
+const initialEmail = '';
+const initialSteps = 0;
+const initialIndex = 4;
+const initialResponse = '';
 
 export default function AppFunctional(props) {
-  // THE FOLLOWING HELPERS ARE JUST RECOMMENDATIONS.
-  // You can delete them and build your own logic from scratch.
+  const [index, setIndex] = useState(initialIndex);
+  const [steps, setSteps] = useState(initialSteps);
+  const [message, setMessage] = useState(initialMessage);
+  const [email, setEmail] = useState(initialEmail);
+  const [response, setResponse] = useState(initialResponse);
 
-  function getXY() {
-    // It it not necessary to have a state to track the coordinates.
-    // It's enough to know what index the "B" is at, to be able to calculate them.
-  }
+  const getXY = (index) => {
+    const x = (index % 3) + 1;
+    const y = Math.floor(index / 3) + 1;
+    const coordinates = { x: x, y: y };
+    return coordinates;
+  };
 
-  function getXYMessage() {
-    // It it not necessary to have a state to track the "Coordinates (2, 2)" message for the user.
-    // You can use the `getXY` helper above to obtain the coordinates, and then `getXYMessage`
-    // returns the fully constructed string.
-  }
+  const getMessage = (index) => {
+    const coordinates = getXY(index);
+    const message = `Coordinates (${coordinates.x}, ${coordinates.y})`;
+    setMessage(message);
+  };
 
-  function reset() {
-    // Use this helper to reset all states to their initial values.
-  }
+  const reset = () => {
+    setIndex(initialIndex);
+    setSteps(initialSteps);
+    setEmail(initialEmail);
+    setResponse(initialResponse);
+    getMessage(initialIndex);
+  };
 
-  function getNextIndex(direction) {
-    // This helper takes a direction ("left", "up", etc) and calculates what the next index
-    // of the "B" would be. If the move is impossible because we are at the edge of the grid,
-    // this helper should return the current index unchanged.
-  }
+  const getNextDirection = (direction) => {
+    const coordinates = getXY(index);
 
-  function move(evt) {
-    // This event handler can use the helper above to obtain a new index for the "B",
-    // and change any states accordingly.
-  }
+    let nextX = coordinates.x;
+    let nextY = coordinates.y;
 
-  function onChange(evt) {
-    // You will need this to update the value of the input.
-  }
+    if (direction === 'left') {
+      nextX -= 1;
+    } else if (direction === 'up') {
+      nextY -= 1;
+    } else if (direction === 'right') {
+      nextX += 1;
+    } else if (direction === 'down') {
+      nextY += 1;
+    }
 
-  function onSubmit(evt) {
-    // Use a POST request to send a payload to the server.
-  }
+    if (nextX < 1 || nextX > 3 || nextY < 1 || nextY > 3) {
+      setResponse(`You can't go ${direction}`);
+      return index;
+    }
+
+    const nextIndex = (nextY - 1) * 3 + (nextX - 1);
+    setResponse('');
+    return nextIndex;
+  };
+
+  const move = (direction) => {
+    const nextIndex = getNextDirection(direction);
+
+    if (nextIndex === index) {
+      return;
+    }
+
+    setIndex(nextIndex);
+    setSteps(steps + 1);
+    getMessage(nextIndex);
+  };
+
+  const onChange = (evt) => {
+    const { value } = evt.target;
+    setEmail(value);
+  };
+
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+    const x = getXY(index).x;
+    const y = getXY(index).y;
+    axios
+      .post('http://localhost:9000/api/result', {
+        x: x,
+        y: y,
+        steps: steps,
+        email: email,
+      })
+      .then((res) => {
+        setResponse(res.data.message);
+        // console.log(res);
+        setEmail('');
+      })
+      .catch((err) => {
+        // console.log(err);
+        setResponse(err.response.data.message);
+      });
+  };
+
+  useEffect(() => {
+    getMessage(index);
+  }, [index]);
 
   return (
-    <div id="wrapper" className={props.className}>
-      <div className="info">
-        <h3 id="coordinates">Coordinates (2, 2)</h3>
-        <h3 id="steps">You moved 0 times</h3>
+    <div id='wrapper' className={props.className}>
+      <div className='info'>
+        <h3 id='coordinates'>{message}</h3>
+        {/* if steps = 1, use "time", if more than 1, use "times" */}
+        {/* You moved 1 time */}
+        <h3 id='steps'>
+          You moved {steps} time{steps === 1 ? '' : 's'}
+        </h3>
       </div>
-      <div id="grid">
-        {
-          [0, 1, 2, 3, 4, 5, 6, 7, 8].map(idx => (
-            <div key={idx} className={`square${idx === 4 ? ' active' : ''}`}>
-              {idx === 4 ? 'B' : null}
-            </div>
-          ))
-        }
+      <div id='grid'>
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((idx) => (
+          <div key={idx} className={`square${idx === index ? ' active' : ''}`}>
+            {idx === index ? 'B' : null}
+          </div>
+        ))}
       </div>
-      <div className="info">
-        <h3 id="message"></h3>
+      <div className='info'>
+        <h3 id='message'>{response}</h3>
       </div>
-      <div id="keypad">
-        <button id="left">LEFT</button>
-        <button id="up">UP</button>
-        <button id="right">RIGHT</button>
-        <button id="down">DOWN</button>
-        <button id="reset">reset</button>
+      <div id='keypad'>
+        <button id='left' onClick={() => move('left')}>
+          LEFT
+        </button>
+        <button id='up' onClick={() => move('up')}>
+          UP
+        </button>
+        <button id='right' onClick={() => move('right')}>
+          RIGHT
+        </button>
+        <button id='down' onClick={() => move('down')}>
+          DOWN
+        </button>
+        <button id='reset' onClick={() => reset()}>
+          reset
+        </button>
       </div>
-      <form>
-        <input id="email" type="email" placeholder="type email"></input>
-        <input id="submit" type="submit"></input>
+      <form onSubmit={onSubmit}>
+        <input
+          id='email'
+          type='email'
+          name='email'
+          label='email'
+          placeholder='type email'
+          value={email}
+          onChange={onChange}
+        />
+        <input id='submit' label='submit' type='submit' alt='submit' />
       </form>
     </div>
-  )
+  );
 }

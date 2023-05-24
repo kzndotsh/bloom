@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 
 const initialMessage = 'Coordinates (2, 2)';
@@ -98,7 +98,7 @@ export default class AppClass extends React.Component {
       .then((res) => {
         this.setState({ response: res.data.message });
         this.setState({ email: '' });
-        // console.log(res);
+        console.log(res);
       })
       .catch((err) => {
         this.setState({ response: err.response.data.message });
