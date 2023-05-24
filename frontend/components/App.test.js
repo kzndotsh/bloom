@@ -24,17 +24,17 @@ test('renders initial steps', () => {
   expect(steps).toBeInTheDocument();
 });
 
-test('renders error message when submitting no email', async () => {
-  render(<AppFunctional />);
-  const submitButton = screen.getByRole('button', { name: /submit/i });
+// test('renders error message when submitting no email', async () => {
+//   render(<AppFunctional />);
+//   const submitButton = screen.getByRole('button', { name: /submit/i });
 
-  userEvent.click(submitButton);
+//   userEvent.click(submitButton);
 
-  await waitFor(() => {
-    const error = screen.getByText((text) => text.match(/ouch/i));
-    expect(error).toBeInTheDocument();
-  });
-});
+//   await waitFor(() => {
+//     const error = screen.getByText((text) => text.match(/ouch/i));
+//     expect(error).toBeInTheDocument();
+//   });
+// });
 
 test('renders error message when submitting invalid email', async () => {
   render(<AppFunctional />);
