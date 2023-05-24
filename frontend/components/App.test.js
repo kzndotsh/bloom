@@ -26,14 +26,12 @@ test('renders initial steps', () => {
 
 test('renders error message when submitting no email', async () => {
   render(<AppFunctional />);
-
-  const emailInput = screen.getByRole('textbox', { id: /email/i });
   const submitButton = screen.getByRole('button', { name: /submit/i });
 
   userEvent.click(submitButton);
 
   await waitFor(() => {
-    const error = screen.getByText(/ouch/i);
+    const error = screen.getByText((text) => text.match(/ouch/i));
     expect(error).toBeInTheDocument();
   });
 });
