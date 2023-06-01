@@ -1,17 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { toggleEditing } from '../actions/titleActions';
 
-const TitleDisplay = (props)=> {
-  const handleClick = () => {
-    props.handleToggleEditing();
-  }
-
-  return(<h2>
+const TitleDisplay = (props) => {
+  return (
+    <h2>
       {props.title}{' '}
       <i
-        className="far fa-edit"
-        onClick={handleClick}
+        className='far fa-edit'
+        onClick={() => props.toggleEditing()}
       />
-  </h2>);
-}
+    </h2>
+  );
+};
 
-export default TitleDisplay;
+const mapStateToProps = (state) => {
+  return {
+    title: state.title.title,
+  };
+};
+
+export default connect(mapStateToProps, { toggleEditing })(TitleDisplay);
