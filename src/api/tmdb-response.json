@@ -1,0 +1,68 @@
+{
+    "adult": false,
+    "backdrop_path": null,
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+      {
+        "id": 12,
+        "name": "Adventure"
+      },
+      {
+        "id": 36,
+        "name": "History"
+      },
+      {
+        "id": 18,
+        "name": "Drama"
+      },
+      {
+        "id": 10751,
+        "name": "Family"
+      }
+    ],
+    "homepage": "",
+    "id": 76323,
+    "imdb_id": "tt0120565",
+    "original_language": "da",
+    "original_title": "Ørnens øje",
+    "overview": "In 1218 Danish king Valdemar sends his homonymous young son and heir in safety, as war is at the borders, to Erskil, the bishop of Ravensburg, who is instructed to see to the prince's education. Alas the bishop is the brain of a conspiracy to seize the crown for himself, as most of the nobles are dissatisfied with the endless wars that bring them no profit. The prince and kitchen-boy Aske accidentally fall out of the castle and overhear the conspirators, but are seen and pursued by the men of the One-eyed Man, a feared mercenary who is in the conspiracy to take mortal revenge on the king for leaving him behind on a battlefield where he lost an eye which was eaten by an eagle, which he tamed and now shares his sight with. Written by KGF Vissers",
+    "popularity": 0.629,
+    "poster_path": "/uoO9ZFTmomXz2tfy8UqwKMzAVrI.jpg",
+    "production_companies": [
+      {
+        "id": 9371,
+        "logo_path": null,
+        "name": "Victoria Film",
+        "origin_country": ""
+      },
+      {
+        "id": 9372,
+        "logo_path": "/yFDmBNoacfgPWutpvD242xsuKmm.png",
+        "name": "Metronome Productions",
+        "origin_country": "DK"
+      }
+    ],
+    "production_countries": [
+      {
+        "iso_3166_1": "DK",
+        "name": "Denmark"
+      }
+    ],
+    "release_date": "1997-03-21",
+    "revenue": 0,
+    "runtime": 91,
+    "spoken_languages": [
+      {
+        "english_name": "Danish",
+        "iso_639_1": "da",
+        "name": "Dansk"
+      }
+    ],
+    "status": "Released",
+    "tagline": "",
+    "title": "Eye of the Eagle",
+    "video": false,
+    "vote_average": 5.8,
+    "vote_count": 8
+  }

@@ -1,0 +1,14 @@
+{
+    "format": "jpeg",
+    "metadata": "some text",
+    "params": [
+      {
+        "name": "title",
+        "text": "<div>Movie <br></div><div>of the <br></div><div>Week!</div>"
+      },
+      {
+        "name": "poster",
+        "imageUrl": "https://dynapictures.com/b/rest/public/media/42ba889bf8/images/undefined"
+      }
+    ]
+  }
