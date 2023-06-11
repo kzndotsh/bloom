@@ -16,7 +16,7 @@ const Families = () => {
                             familyContext.activeFamily.familyName && 'active'
                     }`}
                     key={family.familyName}
-                    onClick={() => familyContext.setAc tiveFamily(family)}>
+                    onClick={() => familyContext.setActiveFamily(family)}>
                     {family.familyName}
                 </button>
             ))}
