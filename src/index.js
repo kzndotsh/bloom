@@ -12,8 +12,8 @@ import App from './App';
 const AppWithRouter = withRouter(App);
 
 ReactDOM.render(
-	<Router>
-		<AppWithRouter />
-	</Router>,
-	document.getElementById('root')
+    <Router>
+        <AppWithRouter />
+    </Router>,
+    document.getElementById('root')
 );
