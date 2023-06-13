@@ -1,39 +1,109 @@
-// ❗ You don't need to add extra action creators to achieve MVP
-export function moveClockwise() { }
+import axios from 'axios';
+import api from '../api';
 
-export function moveCounterClockwise() { }
+// Wheel
+export const moveClockwise = () => {
+    return {
+        type: 'MOVE_CLOCKWISE',
+    };
+};
 
-export function selectAnswer() { }
+export const moveCounterClockwise = () => {
+    return {
+        type: 'MOVE_COUNTERCLOCKWISE',
+    };
+};
 
-export function setMessage() { }
+// Quiz
 
-export function setQuiz() { }
+export function selectAnswer(answer) {
+    return {
+        type: 'SET_SELECTED_ANSWER',
+        payload: answer,
+    };
+}
 
-export function inputChange() { }
+export function setMessage(message) {
+    return {
+        type: 'SET_INFO_MESSAGE',
+        payload: message,
+    };
+}
 
-export function resetForm() { }
+export function setQuiz() {}
 
-// ❗ Async action creators
+export function inputChange(evt) {
+    return {
+        type: 'INPUT_CHANGE',
+        payload: evt.target,
+    };
+}
+
+export function resetForm() {
+    return {
+        type: 'RESET_FORM',
+    };
+}
+
 export function fetchQuiz() {
-  return function (dispatch) {
-    // First, dispatch an action to reset the quiz state (so the "Loading next quiz..." message can display)
-    // On successful GET:
-    // - Dispatch an action to send the obtained quiz to its state
-  }
+    return function (dispatch) {
+        // First, dispatch an action to reset the quiz state (so the "Loading next quiz..." message can display)
+        dispatch({ type: 'SET_QUIZ_INTO_STATE' });
+        // On successful GET:
+        // - Dispatch an action to send the obtained quiz to its state
+        api.get('/quiz/next').then((response) => {
+            dispatch({
+                type: 'SET_QUIZ_INTO_STATE',
+                payload: response.data,
+            });
+        });
+    };
 }
-export function postAnswer() {
-  return function (dispatch) {
-    // On successful POST:
-    // - Dispatch an action to reset the selected answer state
-    // - Dispatch an action to set the server message to state
-    // - Dispatch the fetching of the next quiz
-  }
+
+export function postAnswer(answer) {
+    return function (dispatch) {
+        // On successful POST:
+        api.post('/quiz/answer', answer)
+            .then((response) => {
+                // - Dispatch an action to reset the selected answer state
+                dispatch({ type: 'SELECT_ANSWER', payload: '' });
+                // - Dispatch an action to set the server message to state
+                dispatch({
+                    type: 'SET_INFO_MESSAGE',
+                    payload: response.data.message,
+                });
+                // - Dispatch the fetching of the next quiz
+                dispatch(fetchQuiz());
+            })
+            .catch((error) => {
+                console.log(error);
+                dispatch({
+                    type: 'SET_INFO_MESSAGE',
+                    payload: error,
+                });
+            });
+    };
 }
-export function postQuiz() {
-  return function (dispatch) {
-    // On successful POST:
-    // - Dispatch the correct message to the the appropriate state
-    // - Dispatch the resetting of the form
-  }
+
+export function postQuiz(quiz) {
+    return function (dispatch) {
+        // On successful POST:
+        api.post('/quiz/new', quiz)
+            .then((response) => {
+                // - Dispatch the correct message to the the appropriate state
+                dispatch({
+                    type: 'SET_INFO_MESSAGE',
+                    payload: `Congrats: "${quiz.question_text}" is a great question!`,
+                });
+                // - Dispatch the resetting of the form
+                dispatch({ type: 'RESET_FORM' });
+            })
+            .catch((error) => {
+                dispatch({
+                    type: 'SET_INFO_MESSAGE',
+                    payload: error,
+                });
+                console.log(error);
+            });
+    };
 }
-// ❗ On promise rejections, use log statements or breakpoints, and put an appropriate error message in state
