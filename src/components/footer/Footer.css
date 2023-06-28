@@ -1,0 +1,19 @@
+/* force footer to bottom */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: whitesmoke;
+}
+
+.footer h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+}

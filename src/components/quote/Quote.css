@@ -1,0 +1,16 @@
+.quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+    margin: 1rem 0;
+    color: #000;
+    font-display: balance-text;
+}
+
+.quote-subtext {
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: #666;
+    text-overflow: ellipsis;
+}
