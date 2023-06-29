@@ -33,7 +33,7 @@ export default function App() {
     const redirectToLogin = () => {
         const token = localStorage.getItem('token');
         if (!token) {
-            navigate('/login');
+            navigate('/');
         }
     };
 
@@ -64,6 +64,7 @@ export default function App() {
                 // console.log('App.js login response', res);
                 setMessage(res.message);
                 localStorage.setItem('token', res.token);
+                setIsLoggedIn(true);
             })
             .catch((err) => {
                 // console.log('App.js login error', err);
