@@ -35,6 +35,7 @@ export default function App() {
         if (!token) {
             navigate('/');
         }
+        navigate('/');
     };
 
     const redirectToArticles = () => {
@@ -42,18 +43,25 @@ export default function App() {
         if (token) {
             navigate('/articles');
         }
+        navigate('/articles');
     };
 
     useEffect(() => {
         // console.log('App.js useEffect -> redirectToLogin triggered');
-        redirectToArticles();
+        if (!isLoggedIn) {
+            redirectToLogin();
+            // navigate('/');
+        } else {
+            redirectToArticles();
+            // navigate('/articles');
+        }
     }, [isLoggedIn]);
 
     const logout = () => {
         const token = localStorage.getItem('token');
         localStorage.removeItem('token');
         setMessage('Goodbye!');
-        redirectToLogin();
+        setIsLoggedIn(false);
     };
 
     const login = (credentials) => {
@@ -159,11 +167,20 @@ export default function App() {
         <>
             {spinnerOn ? <Spinner on={true} /> : null}
             <Message message={message} />
+            {/* {isLoggedIn ? (
+                <button
+                    id='logout'
+                    onClick={logout}>
+                    Logout
+                </button>
+            ) : null} */}
+
             <button
                 id='logout'
                 onClick={logout}>
                 Logout from app
             </button>
+
             <div
                 id='wrapper'
                 style={{ opacity: spinnerOn ? '0.25' : '1' }}>
@@ -171,11 +188,20 @@ export default function App() {
                 {/* <-- do not change this line */}
                 <h1>Advanced Web Applications</h1>
                 <nav>
+                    {/* {isLoggedIn ? null : (
+                        <NavLink
+                            id='loginScreen'
+                            to='/'>
+                            Login
+                        </NavLink>
+                    )} */}
+
                     <NavLink
                         id='loginScreen'
                         to='/'>
                         Login
                     </NavLink>
+
                     <NavLink
                         id='articlesScreen'
                         to='/articles'>
@@ -206,6 +232,7 @@ export default function App() {
                                         }
                                     />
                                 </PrivateRoute>
+
                                 <PrivateRoute isLoggedIn={isLoggedIn}>
                                     <Articles
                                         articles={articles}
@@ -214,7 +241,6 @@ export default function App() {
                                             setCurrentArticleId
                                         }
                                         currentArticleId={currentArticleId}
-                                        postArticle={postArticle}
                                         deleteArticle={deleteArticle}
                                     />
                                 </PrivateRoute>
