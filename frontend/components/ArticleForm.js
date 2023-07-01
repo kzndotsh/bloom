@@ -12,7 +12,7 @@ export default function ArticleForm(props) {
     useEffect(() => {
         if (currentArticle) {
             // console.log(
-            //     'ArticleForm.js useEffect -> currentArticle changed to: ' +
+            //     'ArticleForm.js useEffect -> currentArticle is ' +
             //         currentArticle.article_id
             // );
             setValues(currentArticle);
@@ -30,12 +30,12 @@ export default function ArticleForm(props) {
     const onSubmit = (evt) => {
         evt.preventDefault();
         if (currentArticle) {
-            // console.log('ArticleForm.js onSubmit -> currentArticle is truthy');
+            // console.log('ArticleForm.js onSubmit -> updating current article');
             updateArticle(currentArticle.article_id, values);
             setCurrentArticleId(null);
             setValues(initialFormValues);
         } else {
-            // console.log('ArticleForm.js onSubmit -> currentArticle is falsy');
+            // console.log('ArticleForm.js onSubmit -> creating new article');
             postArticle(values);
             setCurrentArticleId(null);
             setValues(initialFormValues);

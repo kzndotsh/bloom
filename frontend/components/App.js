@@ -31,33 +31,26 @@ export default function App() {
     const navigate = useNavigate();
 
     const redirectToLogin = () => {
-        const token = localStorage.getItem('token');
-        if (!token) {
+        if (!isLoggedIn) {
             navigate('/');
         }
-        navigate('/');
     };
 
     const redirectToArticles = () => {
-        const token = localStorage.getItem('token');
-        if (token) {
+        if (isLoggedIn) {
             navigate('/articles');
         }
-        navigate('/articles');
     };
 
     useEffect(() => {
-        // console.log('App.js useEffect -> redirectToLogin triggered');
-        if (!isLoggedIn) {
-            redirectToLogin();
-            // navigate('/');
-        } else {
-            redirectToArticles();
-            // navigate('/articles');
+        // console.log('App.js useEffect -> isLoggedIn triggered ');
+        {
+            isLoggedIn ? redirectToArticles() : redirectToLogin();
         }
     }, [isLoggedIn]);
 
     const logout = () => {
+        // console.log('App.js logout -> logout fn triggered');
         const token = localStorage.getItem('token');
         localStorage.removeItem('token');
         setMessage('Goodbye!');
@@ -65,6 +58,7 @@ export default function App() {
     };
 
     const login = (credentials) => {
+        // console.log('App.js login -> login fn triggered');
         setMessage('');
         setSpinnerOn(true);
         axiosPostLogin(credentials)
@@ -84,6 +78,7 @@ export default function App() {
     };
 
     const getArticles = () => {
+        // console.log('App.js getArticles -> getArticles fn triggered');
         setMessage('');
         setSpinnerOn(true);
         axiosGetArticles()
@@ -102,6 +97,7 @@ export default function App() {
     };
 
     const postArticle = (article) => {
+        // console.log('App.js postArticle -> postArticle fn triggered');
         setMessage('');
         setSpinnerOn(true);
         axiosPostArticle(article)
