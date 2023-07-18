@@ -15,10 +15,7 @@ server.use(express.json());
 server.get('/api/users', async (req, res) => {
   try {
     const users = await Users.find();
-    res.status(200).json({
-      message: 'All users successfully retrieved',
-      data: users,
-    });
+    res.status(200).json(users);
   } catch (error) {
     res.status(500).json({
       message: 'The users information could not be retrieved',
@@ -37,10 +34,7 @@ server.get('/api/users/:id', async (req, res) => {
         message: 'The user with the specified ID does not exist',
       });
     } else {
-      res.status(200).json({
-        message: 'User successfully retrieved',
-        data: user,
-      });
+      res.status(200).json(user);
     }
   } catch (error) {
     res.status(500).json({
@@ -60,11 +54,7 @@ server.post('/api/users', async (req, res) => {
       });
     } else {
       const newUser = await Users.insert({ name, bio });
-      console.log(newUser);
-      res.status(201).json({
-        message: 'User successfully created',
-        data: newUser,
-      });
+      res.status(201).json(newUser);
     }
   } catch (error) {
     res.status(500).json({
@@ -84,10 +74,7 @@ server.delete('/api/users/:id', async (req, res) => {
         message: 'The user with the specified ID does not exist',
       });
     } else {
-      res.status(200).json({
-        message: 'User succesfully deleted',
-        data: deletedUser,
-      });
+      res.status(200).json(deletedUser);
     }
   } catch (error) {
     res.status(500).json({
@@ -102,7 +89,6 @@ server.put('/api/users/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { name, bio } = req.body;
-
     if (!name || !bio) {
       res.status(400).json({
         message: 'Please provide name and bio for the user',
@@ -114,10 +100,7 @@ server.put('/api/users/:id', async (req, res) => {
           message: 'The user with the specified ID does not exist',
         });
       } else {
-        req.status(200).json({
-          message: 'Used successfully updated',
-          data: updatedUser,
-        });
+        res.status(200).json(updatedUser);
       }
     }
   } catch (error) {
