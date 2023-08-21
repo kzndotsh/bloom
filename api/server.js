@@ -15,14 +15,46 @@ const cors = require("cors");
   or you can use a session store like `connect-session-knex`.
  */
 
+const session = require('express-session');
+const KnexSessionStore = require('connect-session-knex')(session);
+
 const server = express();
 
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
+server.use(
+  session({
+    name: 'chocolatechip',
+    secret: 'keep it secret, keep it safe!',
+    cookie: {
+      maxAge: 1000 * 60 * 60,
+      secure: false, // true in production! only set cookies over https. Server will not send back a cookie over http.
+      httpOnly: false, // true in production! don't let JS code access cookies. Browser extensions run JS code on your browser.
+    },
+    resave: false,
+    saveUninitialized: false,
+    store: new KnexSessionStore({
+      knex: require('../data/db-config.js'),
+      tablename: 'sessions',
+      sidfieldname: 'sid',
+      createtable: true,
+      clearInterval: 1000 * 60 * 60,
+    }),
+  })
+);
 
-server.get("/", (req, res) => {
-  res.json({ api: "up" });
+const usersRouter = require('../api/users/users-router.js');
+const authRouter = require('../api/auth/auth-router.js');
+server.use('/api/auth', authRouter);
+server.use('/api/users', usersRouter);
+
+server.get('/', (req, res) => {
+  res.json({ api: 'up' });
+});
+
+server.use('*', (req, res, next) => {
+  next({ status: 404, message: 'not found!' });
 });
 
 server.use((err, req, res, next) => { // eslint-disable-line
