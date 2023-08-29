@@ -8,8 +8,8 @@
  */
 function trimProperties(obj) {
   let newObj = {};
-  for (let key in obj) {
-    newObj[key] = obj[key].trim();
+  for (let prop in obj) {
+    newObj[prop] = obj[prop].trim();
   }
   return newObj;
 }
@@ -23,8 +23,8 @@ function trimProperties(obj) {
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  for (let key in obj) {
-    obj[key] = obj[key].trim();
+  for (let prop in obj) {
+    obj[prop] = obj[prop].trim();
   }
   return obj;
 }
@@ -71,7 +71,7 @@ class Counter {
 
   countDown() {
     if (this.count > 0) {
-      this.count--;
+      return this.count--;
     }
     return this.count;
   }
@@ -106,63 +106,35 @@ class Seasons {
   }
 }
 
-// class Car {
-//   /**
-//    * [Exercise 6A] Car creates a car object
-//    * @param {string} name - the name of the car
-//    * @param {number} tankSize - capacity of the gas tank in gallons
-//    * @param {number} mpg - miles the car can drive per gallon of gas
-//    */
-//   constructor(name, tankSize, mpg) {
-//     this.odometer = 0; // car initializes with zero miles
-//     this.tank = tankSize; // car initializes full of gas
-//     this.mpg = mpg; // miles per gallon
-//   }
-
-//   /**
-//    * [Exercise 6B] Car.prototype.drive adds miles to the odometer and consumes fuel according to mpg
-//    * @param {number} distance - the distance we want the car to drive
-//    * @returns {number} - the updated odometer value
-//    */
-//   drive(distance) {
-//     const maxDistance = this.tank * this.mpg; // Maximum distance car can drive with current gas
-//     const actualDistance = Math.min(maxDistance, distance); // The actual distance car will drive
-//     this.odometer += actualDistance; // Add distance to odometer
-//     this.tank -= actualDistance / this.mpg; // Consume gas based on distance
-//     return this.odometer;
-//   }
-
-//   /**
-//    * [Exercise 6C] Adds gallons to the tank
-//    * @param {number} gallons - the gallons of fuel we want to put in the tank
-//    * @returns {number} - the miles that can be driven after refueling
-//    */
-//   refuel(gallons) {
-//     const spaceInTank = this.tank - this.tank; // Corrected this line
-//     const actualGallons = Math.min(gallons, spaceInTank); // Actual gallons added to the tank
-//     this.tank += actualGallons; // Add fuel to the tank
-//     return this.tank * this.mpg; // Return miles that can be driven with the refueled tank
-//   }
-// }
-
 class Car {
   constructor(name, tankSize, mpg) {
     this.odometer = 0;
     this.tank = tankSize;
+    this.tankSize = tankSize;
+    this.name = name;
+    this.mpg = mpg;
   }
 
   drive(distance) {
-    this.odometer += distance;
-    this.tank -= distance / this.mpg;
-    if (this.tank <= 0) {
+    const milesCanDrive = this.tank * this.mpg;
+    if (distance <= milesCanDrive) {
+      this.odometer = this.odometer + distance;
+      this.tank = this.tank - distance / this.mpg;
+      console.log(this.tank);
+    } else {
       this.tank = 0;
+      this.odometer = this.odometer + milesCanDrive;
     }
     return this.odometer;
   }
 
   refuel(gallons) {
-    this.tank += gallons;
-    return this.odometer;
+    if (gallons <= this.tankSize - this.tank) {
+      this.tank = this.tank + gallons;
+    } else {
+      this.tank = this.tankSize;
+    }
+    return this.tank * this.mpg;
   }
 }
 

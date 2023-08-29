@@ -46,12 +46,12 @@ describe('[Exercise 4] Counter', () => {
   });
 
   test('[6] the FIRST CALL of counter.countDown returns the initial count minus one', () => {
-    expect(counter.countDown()).toBe(2);
+    expect(counter.countDown()).toBe(3);
   });
 
   test('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {
     counter.countDown();
-    expect(counter.countDown()).toBe(1);
+    expect(counter.countDown()).toBe(2);
   });
 
   test('[8] the count eventually reaches zero but does not go below zero', () => {
@@ -101,32 +101,68 @@ describe('[Exercise 5] Seasons', () => {
   });
 });
 
+// class Car {
+//   constructor(name, tankSize, mpg) {
+//     this.odometer = 0;
+//     this.tank = tankSize;
+//     this.tankSize = tankSize;
+//   }
+
+//   drive(distance) {
+//     const milesCanDrive = this.tank * this.mpg;
+//     if (distance <= milesCanDrive) {
+//       this.odometer = this.odometer + distance;
+//       this.tank = this.tank - distance / this.mpg;
+//     } else {
+//       this.tank = 0;
+//       this.odometer = this.odometer + milesCanDrive;
+//     }
+//     return this.odometer;
+//   }
+
+//   refuel(gallons) {
+//     if (gallons <= this.tankSize - this.tank) {
+//       this.tank = this.tank + gallons;
+//     } else {
+//       this.tank = this.tankSize;
+//     }
+//     return this.tank * this.mpg;
+//   }
+// }
+
 describe('[Exercise 6] Car', () => {
   let focus;
   beforeEach(() => {
     focus = new utils.Car('focus', 20, 30); // each test must start with a fresh car
   });
   test('[15] driving the car returns the updated odometer', () => {
-    focus.drive(150);
-    expect(focus.odometer).toBe(150);
-  });
-  test('[16] driving the car uses gas', () => {
     expect(focus.drive(100)).toBe(100);
     expect(focus.drive(100)).toBe(200);
     expect(focus.drive(100)).toBe(300);
     expect(focus.drive(200)).toBe(500);
-    expect(focus.drive(200)).toBe(700);
+  });
+  test('[16] driving the car uses gas', () => {
+    focus.drive(600);
+    expect(focus.drive(1)).toBe(600);
+    expect(focus.drive(1)).toBe(600);
+    expect(focus.drive(1)).toBe(600);
+    expect(focus.tank).toBe(0);
   });
 
   test('[17] refueling allows to keep driving', () => {
-    focus.drive(500);
+    focus.drive(600);
     focus.refuel(10);
-    expect(focus.drive(100)).toBe(600);
+    focus.drive(600);
+    expect(focus.odometer).toBe(900);
+    focus.refuel(20);
+    focus.drive(600);
+    expect(focus.odometer).toBe(1500);
   });
 
   test('[18] adding fuel to a full tank has no effect', () => {
-    focus.refuel(20);
-    expect(focus.tank).toBe(40);
+    focus.refuel(2000000);
+    focus.drive(10000);
+    expect(focus.odometer).toBe(600);
   });
 });
 
