@@ -19,11 +19,8 @@ server.use((err, req, res, next) => {
   });
 });
 
-// eslint-disable-next-line
-server.use((err, req, res, next) => {
-  res.status(404).json({
-    message: '404 not found',
-  });
+server.use('*', (req, res, next) => {
+  next({ status: 404, message: 'not found!' });
 });
 
 module.exports = server;
