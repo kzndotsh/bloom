@@ -9,6 +9,12 @@ const {
   updateUserById,
 } = require('./users-model');
 
+const {
+  checkId,
+  checkPayload,
+  checkEmailUnique,
+} = require('./users-middleware');
+
 // [GET] get all existing users
 router.get('/', async (req, res, next) => {
   try {
@@ -20,8 +26,8 @@ router.get('/', async (req, res, next) => {
 });
 
 // [GET] get an existing user by ID
-router.get('/:id', async (req, res, next) => {
-  const { id } = req.params.id;
+router.get('/:id', checkId, async (req, res, next) => {
+  const { id } = req.params;
   try {
     const user = await getUserById(id);
     res.status(200).json(user);
@@ -31,8 +37,9 @@ router.get('/:id', async (req, res, next) => {
 });
 
 // [POST] create a new user
-router.post('/', async (req, res, next) => {
-  const userInfo = req.params.body;
+router.post('/', checkPayload, checkEmailUnique, async (req, res, next) => {
+  const userInfo = req.body;
+
   try {
     const newUser = await createUser(userInfo);
     res.status(201).json(newUser);
@@ -42,10 +49,11 @@ router.post('/', async (req, res, next) => {
 });
 
 // [DELETE] delete an existing user by ID
-router.delete('/:id', async (req, res, next) => {
-  const { id } = req.params.id;
+router.delete('/:id', checkId, async (req, res, next) => {
+  const { id } = req.params;
+  const deletedUser = await getUserById(id);
   try {
-    const deletedUser = await deleteUserById(id);
+    await deleteUserById(id);
     res.status(200).json(deletedUser);
   } catch (error) {
     next(error);
@@ -53,16 +61,23 @@ router.delete('/:id', async (req, res, next) => {
 });
 
 // [PUT] update an existing user by ID
-router.put('/:id', async (req, res, next) => {
-  const { id } = req.params.id;
-  const updates = req.body;
-  try {
-    const updatedUser = await updateUserById(id, updates);
-    return updatedUser;
-  } catch (error) {
-    next(error);
+router.put(
+  '/:id',
+  checkId,
+  checkPayload,
+  checkEmailUnique,
+  async (req, res, next) => {
+    const { id } = req.params;
+    const updates = req.body;
+    try {
+      await updateUserById(id, updates);
+      const updatedUser = await getUserById(id);
+      res.status(200).json(updatedUser);
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 // eslint-disable-next-line
 router.use((err, req, res, next) => {
