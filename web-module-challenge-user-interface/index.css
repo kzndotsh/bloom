@@ -1,0 +1,124 @@
+/*======= Create a new universal selector that changes the font color to: #3C373B */
+
+* {
+  color: #3C373B;
+}
+
+
+h1 {
+  font-family: 'Gaegu', cursive;
+  margin: 20px 0;
+  font-size: 60px;
+  text-align: center;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Gaegu', cursive;
+  margin-bottom: 0;
+  padding: 0 10px;
+  font-size: 30px;
+}
+
+p {
+  font-size: 16px;
+  font-family: roboto;
+  padding: 10px;
+  line-height: 1.4;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.content-row {
+  display: flex;
+}
+
+.content-row div {
+  margin: 20px;
+}
+
+.container {
+  width: 605px;
+  margin: 0 auto;
+}
+
+.container header nav a {
+  margin: 0 10px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  background: #F87B99;
+
+}
+
+.container header nav a:hover {
+  background: #ffffff;
+  background-color: pink;
+}
+
+.about {
+  margin-top: 20px;
+}q
+
+.contact-section {
+  border-top: 1px dashed black;
+  padding: 20px 0;
+}
+
+.contact-section h2 {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+address {
+  line-height: 2;
+}
+
+
+footer {
+  width: 100%;
+  background: #F87B99;
+  border-top: 1px dashed white;
+}
+
+footer .footer-content {
+  margin: 0 auto;
+  width: 600px;
+}
+
+footer .footer-content h3 {
+  padding: 0;
+  margin: 20px 0;
+}
+
+footer nav {
+  display: flex;
+}
+
+footer a {
+  margin: 10px;
+  color: black;
+  text-decoration: underline;
+}
+
+footer nav a:first-child {
+  margin-left: 0;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer .footer-content .copyright {
+  padding: 20px 0;
+  text-align: center;
+}
