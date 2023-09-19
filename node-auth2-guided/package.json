@@ -1,0 +1,29 @@
+{
+  "name": "node-2-guided",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "nodemon",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "ketchup": "git fetch && git reset --hard origin/lecture",
+    "resetdb": "npm run rollback && npm run migrate && npm run seed"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.4",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "knex": "^2.4.2",
+    "knex-cleaner": "^1.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "nodemon": "^2.0.21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bloominstituteoftechnology/node-auth2-guided.git"
+  }
+}
